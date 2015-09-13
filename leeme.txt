@@ -1,0 +1,15 @@
+COMANDOS PARA GIT: git --global user.name "tu nombre".
+		   git --global user.emal "<tu_emai>".
+		   cd selecciona el repositorio de trabajo.
+		   mkdir crea una carpeta dentro del repositorio.
+		   git clone http://github.com/tomasmartynowicz/prueba copia
+		   el repositorio web.
+		   touch archivo.extencion crea un archivo vacio.
+		   vi archivo.extencion abre el editor de texto del SO.
+		   git add.extencion agrega el archivo determinado al 
+		   repositorio.
+		   git add . agrega todos los archivos creados al repositorio.
+		   git status muestra los archivos agregados.
+		   git commit abre primero el editor del commit para luego 
+		   guardarlo en el repositorio.
+		   :wq cierra el editor y guarda en el archivo.
