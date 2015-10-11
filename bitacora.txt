@@ -1,0 +1,16 @@
+Reunion:{personal, virtual}
+Integrantes:{nombre-estado{aprobado-pendiente-desaprobado}}
+Fecha:{}
+Descripcion:{}
+Decision:{}
+--------------------------------------------------------------------------------------------------------
+**************************************************************************************
+--------------------------------------------------------------------------------------------------------
+Reunion:virtual
+Integrantes:Guille-
+	Tomas-
+	Maxi-Aprobado
+Fecha:10/10/2015	
+Descripcion:Metodologia de trabajo
+Decision:Crear bitacora.txt y proyecto en kandboard, se sube al repositorio
+	https://github.com/tomasmartynowicz/prueba
