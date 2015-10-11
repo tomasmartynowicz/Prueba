@@ -8,7 +8,7 @@ Decision:{}
 --------------------------------------------------------------------------------------------------------
 Reunion:virtual
 Integrantes:Guille-
-	Tomas-
+	Tomas-Aprobado
 	Maxi-Aprobado
 Fecha:10/10/2015	
 Descripcion:Metodologia de trabajo
