@@ -1,5 +1,5 @@
-COMANDOS PARA GIT: git --global user.name "tu nombre".
-		   git --global user.emal "<tu_emai>".
+COMANDOS PARA GIT: git config --global user.name "tu nombre".
+		   git config --global user.email "<tu_email>".
 		   cd selecciona el repositorio de trabajo.
 		   mkdir crea una carpeta dentro del repositorio.
 		   git clone http://github.com/tomasmartynowicz/prueba copia
@@ -12,4 +12,5 @@ COMANDOS PARA GIT: git --global user.name "tu nombre".
 		   git status muestra los archivos agregados.
 		   git commit abre primero el editor del commit para luego 
 		   guardarlo en el repositorio.
+		   git push   mueve los archivos modificados al repositorio
 		   :wq cierra el editor y guarda en el archivo.
