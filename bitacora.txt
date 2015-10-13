@@ -15,3 +15,15 @@ Fecha:10/10/2015
 Descripcion:Metodologia de trabajo
 Decision:Crear bitacora.txt y proyecto en kandboard, se sube al repositorio
 	https://github.com/tomasmartynowicz/prueba
+--------------------------------------------------------------------------------------------------------
+**************************************************************************************
+--------------------------------------------------------------------------------------------------------
+Reunion:virtual
+Integrantes:
+	Guille-
+	Tomas-
+	Maxi-Aprobado
+Fecha:10/10/2015	
+Descripcion:Aprobar ambito de desarrollo, especificacion de procesos y
+	diagrama de casos de uso
+Decision: "aclarar decision en integrantes"
