@@ -39,3 +39,14 @@ Fecha:10/10/2015
 Descripcion:Aprobar ambito de desarrollo, especificacion de procesos y
 	diagrama de casos de uso
 Decision: "aclarar decision en integrantes"
+--------------------------------------------------------------------------------------------------------
+**************************************************************************************
+--------------------------------------------------------------------------------------------------------
+Reunion:personal
+Integrantes:
+	Guille-
+	Tomas-
+	Maxi-Aprobado
+Fecha:21/10/2015	
+Descripcion:Aprobar diagrama de clases y crear proyecto videojuego
+Decision:terminamos con la etapa de diseño, empezamos con las tareas de codificacion de clases
