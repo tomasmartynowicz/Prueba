@@ -10,7 +10,7 @@ Reunion: virtual
 Integrantes:
 	Guille-
 	Tomas-Aprobado
-	Maxi-
+	Maxi-Aprobado
 Fecha:02/9/2015
 Descripcion:Metodologia de trabajo
 Decision: Crear usuario en github y repositorio compartido para el proyecto.
@@ -50,3 +50,14 @@ Integrantes:
 Fecha:21/10/2015	
 Descripcion:Aprobar diagrama de clases y crear proyecto videojuego
 Decision:terminamos con la etapa de diseño, empezamos con las tareas de codificacion de clases
+--------------------------------------------------------------------------------------------------------
+**************************************************************************************
+--------------------------------------------------------------------------------------------------------
+Reunion:virtual
+Integrantes:
+	Guille-
+	Tomas-
+	Maxi-Aprobado
+Fecha:21/10/2015	
+Descripcion:el Diagrama de clases se encuentra en Disen~o y esta en formato pdf
+Decision:Aprobar diagrama de clases version final
