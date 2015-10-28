@@ -23,7 +23,7 @@ Reunion: virtual
 Integrantes:
 	Guille-Aprobado
 	Tomas-
-	Maxi-
+	Maxi-Aprobado
 Fecha:14/9/2015
 Descipcion:La historia del juego 
 Decision: crear un txt con la historia del juego y su descripcion de lo que hace
