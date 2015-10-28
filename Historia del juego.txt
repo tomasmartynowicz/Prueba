@@ -1,0 +1,14 @@
+"Jump the rock!" trata sobre un perro llamado Stan. Fue un prisionero de unos laboratorios que
+experimentaron con él, lo que le confirió un aspecto "casi humano", pero cuando no pudo soportarlo
+hizo lo imposible para escaparse, y se dirigio al exterior para correr libre al fin por las llanuras,
+donde tendra sus aventuras.
+
+
+El juego contara con un único personaje(Stan, el perro), que estara ubicado en la esquina izquierda de la pantalla.
+Su objetivo es saltar unos obstaculos que aparecerán  en el camino, 
+cada vez que salta un obstaculo gana puntos, si choca uno de éstos pierde.
+El personaje estará fijo en la pantalla, pero tendrá “moviemiento” en las extremidades,
+y el suelo y el fondo se movería de derecha a izquierda de forma permanente.
+A medida que transcurra el tiempo va a incrementarse la velocidad con la 
+que los obstaculos vendrán hacia el jugador/personaje, así como también a medida
+que va superando escalas fijas de puntos(score) cambia el fondo del escenario.
