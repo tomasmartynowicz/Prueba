@@ -14,3 +14,4 @@ COMANDOS PARA GIT: git config --global user.name "tu nombre".
 		   guardarlo en el repositorio.
 		   git push   mueve los archivos modificados al repositorio
 		   :wq cierra el editor y guarda en el archivo.
+http://programarcadegames.com/index.php?chapter=introduction_to_graphics&lang=es#section_5
