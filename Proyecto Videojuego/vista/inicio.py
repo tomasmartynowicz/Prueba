@@ -3,41 +3,36 @@
 #                                  Creo que la subclase se importa automaticamente junto con la clase. No estoy seguro.
 
 import pygame
+from modelo.Jugador import Jugador
+from modelo.Enemigo import Enemigo
+from modelo.Sonido import Sonido
+from modelo.Juego import Juego
+from modelo.Pantalla import Pantalla
+
 pygame.init()
 
 
-pygame.init()
-
-#Inicializacion de constantes
-resolucion = (1080,420)
 salir = False
 
-#Configuracion de Pantalla
-display = pygame.display.set_mode(resolucion)
-pygame.display.set_caption("Jump the Rock")
 reloj1 = pygame.time.Clock()
 
 
-imagen=pygame.image.load('fondo.png')
-perro=pygame.image.load('Perro4.png')
-roca=pygame.image.load('rock.png')
-display.blit(imagen,[0, 0])
 
-display.blit(roca,[900, 320])
-display.blit(perro,[0, 330])
+
+
 
 # Definir colores
 BLANCO = (255, 255, 255)
-#Configuracion del sonido
-pygame.mixer.music.load('dog.mp3')
-pygame.mixer.music.play(-1)
 
-
+newGame=Juego()
+newGame.crearPantalla()
+#newGame.crearPersonaje()
+newGame.reproducirSonido()
 
 #texto en pantalla
 fuente = pygame.font.Font(None, 25)
 texto = fuente.render("Jum the rock!!", True, BLANCO)
-display.blit(texto, [0, 0])
+#newGame.pantalla.display.blit(texto, [0, 0])
 
 
 
@@ -50,7 +45,6 @@ while salir != True:
 
 
     reloj1.tick(30)
-  #cmabiar color de pantalla-->  display.fill(BLANCO)
     pygame.display.update()
 
 
