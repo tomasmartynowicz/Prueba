@@ -8,8 +8,8 @@ class Jugador(Personaje):                                           #Esta es la 
             #self.listaAnimacion en contruccion         #Ejecuto el metodo de la clase base
 
         def saltar(self):
-            self.x=100
-            self.y=600
+            self.x=0
+            self.y=100
 
         def animar(self):
             print 'en contruccion'

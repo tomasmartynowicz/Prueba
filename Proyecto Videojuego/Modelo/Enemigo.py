@@ -6,4 +6,5 @@ class Enemigo(Personaje):                                           #Esta es la 
             Personaje.__init__(self,imagen,x,y)
 
         def desplazarIzquierda(self):
-         print 'en contruccion'
+            self.x=0
+            self.y=350

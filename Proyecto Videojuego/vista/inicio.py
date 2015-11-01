@@ -22,9 +22,14 @@ BLANCO = (255, 255, 255)
 
 newGame=Juego()
 newGame.crearPantalla()
-newGame.crearJugador()
-newGame.crearEnemigo()
-newGame.reproducirSonido()
+newGame.mostrarPuntaje()
+newGame.mostrarJugador()
+newGame.mostrarEnemigo()
+newGame.jugador.saltar()
+newGame.mostrarJugador()
+newGame.enemigo.desplazarIzquierda()
+newGame.mostrarEnemigo()
+#newGame.reproducirSonido()
 
 #texto en pantalla
 fuente = pygame.font.Font(None, 25)
@@ -38,14 +43,13 @@ while salir != True:
 
     for event in pygame.event.get():
 
-   #     keys = pygame.key.get_pressed()
-
-  #  if keys[pygame.K_UP]:
-   #     newGame.jugador.saltar()
-    #    newGame.pantalla.display.blit(newGame.jugador.imagen,[newGame.jugador.x,newGame.jugador.y])
-     #   pygame.display.update()
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_UP]:
+             #newGame.jugador.saltar()
+             #newGame.mostrarJugador()
+             pygame.display.update()
         if event.type == pygame.QUIT:
-            salir = True
+                salir = True
 
 
     reloj1.tick(30)
