@@ -17,16 +17,13 @@ salir = False
 reloj1 = pygame.time.Clock()
 
 
-
-
-
-
 # Definir colores
 BLANCO = (255, 255, 255)
 
 newGame=Juego()
 newGame.crearPantalla()
-#newGame.crearPersonaje()
+newGame.crearJugador()
+newGame.crearEnemigo()
 newGame.reproducirSonido()
 
 #texto en pantalla
@@ -40,11 +37,19 @@ texto = fuente.render("Jum the rock!!", True, BLANCO)
 while salir != True:
 
     for event in pygame.event.get():
+
+   #     keys = pygame.key.get_pressed()
+
+  #  if keys[pygame.K_UP]:
+   #     newGame.jugador.saltar()
+    #    newGame.pantalla.display.blit(newGame.jugador.imagen,[newGame.jugador.x,newGame.jugador.y])
+     #   pygame.display.update()
         if event.type == pygame.QUIT:
             salir = True
 
 
     reloj1.tick(30)
+
     pygame.display.update()
 
 
