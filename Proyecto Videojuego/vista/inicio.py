@@ -24,18 +24,8 @@ newGame=Juego()
 newGame.crearPantalla()
 newGame.mostrarPuntaje()
 newGame.mostrarJugador()
-newGame.mostrarEnemigo()
-newGame.jugador.saltar()
-newGame.mostrarJugador()
-newGame.enemigo.desplazarIzquierda()
-newGame.mostrarEnemigo()
+#newGame.mostrarEnemigo()
 #newGame.reproducirSonido()
-
-#texto en pantalla
-fuente = pygame.font.Font(None, 25)
-texto = fuente.render("Jum the rock!!", True, BLANCO)
-#newGame.pantalla.display.blit(texto, [0, 0])
-
 
 
 #Bucle principal del videojuego
@@ -44,10 +34,14 @@ while salir != True:
     for event in pygame.event.get():
 
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_UP]:
-             #newGame.jugador.saltar()
-             #newGame.mostrarJugador()
-             pygame.display.update()
+        newGame.crearPantalla()
+        #newGame.moverPantalla()
+
+        if keys[pygame.K_SPACE]:
+             newGame.jugador.saltar()
+             newGame.mostrarJugador()
+             newGame.mostrarEnemigo()
+             newGame.enemigo.desplazarIzquierda()
         if event.type == pygame.QUIT:
                 salir = True
 
