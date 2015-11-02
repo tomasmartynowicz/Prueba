@@ -11,9 +11,8 @@ class Juego(object):
         self.pantalla=Pantalla(pygame.display.set_caption("Jump the Rock"),pygame.display.set_mode((1080,420)),pygame.image.load('fondo.png'),0,0)
         self.puntaje=0
 
-    def crearPantalla(self):
+    def actualizarPantalla(self):
         self.pantalla.display.blit(self.pantalla.imagen,[self.pantalla.pos_x,self.pantalla.pos_y])
-
 
     def moverPantalla(self):
         pos_x=self.jugador.x
@@ -35,10 +34,13 @@ class Juego(object):
         self.pantalla.display.blit(self.enemigo.imagen,[self.enemigo.x, self.enemigo.y])
         pygame.display.update()
 
-    def mostrarPuntaje(self):
+    def crearEnemgio(self):
+        self.enemigo=Enemigo(pygame.image.load('rock.png'),1000,350)
+
+    def mostrarPuntaje(self,puntaje):
         fuente = pygame.font.Font(None, 25)
-        texto = fuente.render("Jum the rock!! Score:0", True, (255, 255, 255))
-        self.pantalla.display.blit(texto,[870, 0])
+        texto = fuente.render("Jum the rock!! Score: "+puntaje, True, (255, 255, 255))
+        self.pantalla.display.blit(texto,[800, 0])
 
     def reproducirSonido(self):
         pygame.mixer.music.load('dog.mp3')

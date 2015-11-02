@@ -17,14 +17,15 @@ salir = False
 reloj1 = pygame.time.Clock()
 
 
-# Definir colores
+# CONSTANTES Y Inicializacion de variables
 BLANCO = (255, 255, 255)
+PUNTAJE="0"
 
 newGame=Juego()
-newGame.crearPantalla()
-newGame.mostrarPuntaje()
+newGame.actualizarPantalla()
+newGame.mostrarPuntaje(PUNTAJE)
 newGame.mostrarJugador()
-#newGame.mostrarEnemigo()
+newGame.mostrarEnemigo()
 #newGame.reproducirSonido()
 
 
@@ -34,13 +35,21 @@ while salir != True:
     for event in pygame.event.get():
 
         keys = pygame.key.get_pressed()
-        newGame.crearPantalla()
+        newGame.actualizarPantalla()
+        newGame.mostrarPuntaje(PUNTAJE)
+        newGame.mostrarJugador()
+        newGame.mostrarEnemigo()
         #newGame.moverPantalla()
 
         if keys[pygame.K_SPACE]:
              newGame.jugador.saltar()
+             newGame.actualizarPantalla()
+             newGame.mostrarPuntaje(PUNTAJE)
+             newGame.puntaje=newGame.puntaje+100
+             PUNTAJE="100"
              newGame.mostrarJugador()
              newGame.mostrarEnemigo()
+             newGame.crearEnemgio()
              newGame.enemigo.desplazarIzquierda()
         if event.type == pygame.QUIT:
                 salir = True
