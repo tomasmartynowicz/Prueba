@@ -33,7 +33,7 @@ newGame.actualizarPantalla()
 #Bucle principal del videojuego
 while salir != True:
     newGame.actualizarPantalla()
-    newGame.pantalla.moverPantalla()
+    #newGame.pantalla.moverPantalla()
     newGame.enemigo.desplazarIzquierda()
 
     for event in pygame.event.get():

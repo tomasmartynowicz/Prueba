@@ -86,3 +86,15 @@ Integrantes:
 Fecha:21/10/2015	
 Descripcion:el Diagrama de clases se encuentra en Disen~o y esta en formato pdf
 Decision:Aprobar diagrama de clases version final
+--------------------------------------------------------------------------------------------------------
+**************************************************************************************
+--------------------------------------------------------------------------------------------------------
+Reunion:virtual
+Integrantes:
+	Guille-Aprobado
+	Tomas-
+	Maxi-Aprobado
+Fecha:03/11/2015	
+Descripcion:creacion del proyecto
+Decision:se crea el proyecto, se crean dos carpetas modelo, vista.
+	se crean las clases del diseño y se comienza a realizar las pruebas

@@ -9,7 +9,7 @@ class Enemigo(Personaje):                                           #Esta es la 
             if self.x<-16:
                 self.inicializarPosicion()
             else:
-               self.x=self.x-16
+               self.x=self.x-10
                self.y=350
 
         def inicializarPosicion(self):

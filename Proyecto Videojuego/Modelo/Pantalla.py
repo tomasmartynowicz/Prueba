@@ -26,9 +26,14 @@ class Pantalla(object):                                             #El parametr
     def cargarPantalla(self,jugador,enemigo,puntaje):
         fuente = pygame.font.Font(None, 25)
         texto = fuente.render("Jum the rock!! Score: "+str(puntaje), True, (255, 255, 255))
-        self.display.blit(self.imagen,[self.pos_x, self.pos_y])
-        self.display.blit(jugador.imagen,[jugador.x,jugador.y])
-        self.display.blit(enemigo.imagen,[enemigo.x,enemigo.y])
+        self.display.blit(self.imagen,[self.pos_x, self.pos_y]) #imprime pantalla
+        #este if escribe en pantalla "perdiste" si se chocan los personajes
+        if jugador.x==enemigo.x:
+            texto2=fuente.render("Perdiste!", True, (255, 255, 255))
+            self.display.blit(texto2,[500, 0])
+
+        self.display.blit(jugador.imagen,[jugador.x,jugador.y])#imprime jugador
+        self.display.blit(enemigo.imagen,[enemigo.x,enemigo.y])#imprime enemigo
         self.display.blit(texto,[800, 0])
 
 
