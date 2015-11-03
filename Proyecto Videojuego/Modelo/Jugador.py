@@ -11,5 +11,9 @@ class Jugador(Personaje):                                           #Esta es la 
             self.x=0
             self.y=100
 
+        def caer(self):
+            self.x=0
+            self.y=320
+
         def animar(self):
             print 'en contruccion'

@@ -12,19 +12,7 @@ class Juego(object):
         self.puntaje=0
 
     def actualizarPantalla(self):
-        self.pantalla.display.blit(self.pantalla.imagen,[self.pantalla.pos_x,self.pantalla.pos_y])
-
-    def moverPantalla(self):
-        pos_x=self.jugador.x
-        pos_y=self.jugador.y
-        for x in range(500):                  # animamos 500 cuadros
-               self.pantalla.display.blit(self.pantalla.imagen,[pos_x,pos_y])
-               self.pantalla.display.blit(self.jugador.imagen,[self.jugador.x, self.jugador.y])
-               pos_x=pos_x+2
-               pos_y=0
-               pygame.display.update()                            # y los mostramos
-               pygame.time.delay(-1)
-
+        self.pantalla.cargarPantalla(self.jugador,self.enemigo,self.puntaje)
 
     def mostrarJugador(self):
         self.pantalla.display.blit(self.jugador.imagen,[self.jugador.x, self.jugador.y])
@@ -34,12 +22,12 @@ class Juego(object):
         self.pantalla.display.blit(self.enemigo.imagen,[self.enemigo.x, self.enemigo.y])
         pygame.display.update()
 
-    def crearEnemgio(self):
+    def crearEnemigo(self):
         self.enemigo=Enemigo(pygame.image.load('rock.png'),1000,350)
 
-    def mostrarPuntaje(self,puntaje):
+    def mostrarPuntaje(self):
         fuente = pygame.font.Font(None, 25)
-        texto = fuente.render("Jum the rock!! Score: "+puntaje, True, (255, 255, 255))
+        texto = fuente.render("Jum the rock!! Score: "+str(self.puntaje), True, (255, 255, 255))
         self.pantalla.display.blit(texto,[800, 0])
 
     def reproducirSonido(self):
