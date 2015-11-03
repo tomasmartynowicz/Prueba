@@ -12,8 +12,15 @@ class Pantalla(object):                                             #El parametr
 
 
     def moverPantalla(self):
-         self.pos_x=self.pos_x-2
-         self.pos_y=0
+        if self.pos_x<-400:
+            self.inicilizarPosicion()
+        else:
+            self.pos_x=self.pos_x-2
+            self.pos_y=0
+
+    def inicilizarPosicion(self):
+            self.pos_x=1080
+            self.pos_y=420
 
 
     def cargarPantalla(self,jugador,enemigo,puntaje):
@@ -23,8 +30,5 @@ class Pantalla(object):                                             #El parametr
         self.display.blit(jugador.imagen,[jugador.x,jugador.y])
         self.display.blit(enemigo.imagen,[enemigo.x,enemigo.y])
         self.display.blit(texto,[800, 0])
-        #self.moverPantalla()
-        #pygame.time.delay(-1)
-        #pygame.display.update()
 
 

@@ -34,18 +34,17 @@ newGame.actualizarPantalla()
 while salir != True:
     newGame.actualizarPantalla()
     newGame.pantalla.moverPantalla()
-    pygame.time.delay(10)
+    newGame.enemigo.desplazarIzquierda()
 
     for event in pygame.event.get():
 
         keys = pygame.key.get_pressed()
 
-        #newGame.moverPantalla()
         if keys[pygame.K_SPACE]:
              newGame.jugador.saltar()
              newGame.actualizarPantalla()
-             newGame.puntaje=newGame.puntaje+10
              newGame.jugador.caer()
+             newGame.puntaje=newGame.puntaje+10
 
         if event.type == pygame.QUIT:
                 salir = True

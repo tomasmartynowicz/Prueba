@@ -9,7 +9,7 @@ class Jugador(Personaje):                                           #Esta es la 
 
         def saltar(self):
             self.x=0
-            self.y=100
+            self.y=50
 
         def caer(self):
             self.x=0
