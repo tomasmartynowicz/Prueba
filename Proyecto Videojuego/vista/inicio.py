@@ -36,6 +36,14 @@ while salir != True:
     #newGame.pantalla.moverPantalla()
     newGame.enemigo.desplazarIzquierda()
 
+    #enemigo=Enemigo()                  tengo que seguir modificando
+    #enemigo.setImagen('rock.png'),
+    #enemigo.setX(1000)
+    #enemigo.setY(320)
+    #enemigo.toPantalla(newGame.pantalla.display)
+
+
+
     for event in pygame.event.get():
 
         keys = pygame.key.get_pressed()
@@ -44,7 +52,6 @@ while salir != True:
              newGame.jugador.saltar()
              newGame.actualizarPantalla()
              newGame.jugador.caer()
-             newGame.puntaje=newGame.puntaje+10
 
         if event.type == pygame.QUIT:
                 salir = True
