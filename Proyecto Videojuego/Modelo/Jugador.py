@@ -29,7 +29,7 @@ class Jugador(Personaje):                                           #Esta es la 
             return alias
     #toPantalla()
         def toPantalla(self,display):
-            return display.blit(self.imagen,[self.x, self.y]) #imprime en pantalla
+            display.blit(self.imagen,[self.x, self.y]) #imprime en pantalla
 
     #metodos
         def saltar(self):

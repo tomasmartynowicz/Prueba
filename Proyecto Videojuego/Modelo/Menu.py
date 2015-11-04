@@ -1,4 +1,4 @@
-from Modelo.Pantalla import Pantalla
+from modelo.Pantalla import Pantalla
 import pygame, sys
 
 class Menu(object):

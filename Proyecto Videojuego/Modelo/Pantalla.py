@@ -10,31 +10,25 @@ class Pantalla(object):                                             #El parametr
         self.x=x
         self.y=y
 
-    #Getters and Setters
-        def setNombre(self, nombre):
+    #Setters
+    def setNombre(self, nombre):
             self.nombre=nombre
-        def getNombre(self):
-            return nombre
 
-        def setDisplay(self, display):
+    def setDisplay(self, display):
             self.display=display
-        def getDisplay(self):
-            return display
 
-        def setImagen(self, imagen):
+    def setImagen(self, imagen):
             self.imagen=imagen
-        def getImagen(self):
-            return imagen
 
-        def setX(self, x):
+    def setX(self, x):
             self.x=x
-        def getX(self):
-            return x
 
-        def setY(self, y):
+    def setY(self, y):
             self.y=y
-        def getY(self):
-            return y
+    #toPantalla()
+    def toPantalla(self):  #tipo el toString()
+         self.display.blit(self.imagen,[self.x, self.y]) #imprime en pantalla
+
 
     #metodos
 
@@ -53,8 +47,7 @@ class Pantalla(object):                                             #El parametr
         self.display.blit(self.imagen,[self.x, self.y]) #imprime pantalla
         jugador.toPantalla(self.display)
         enemigo.toPantalla(self.display)
-        #self.display.blit(enemigo.imagen,[enemigo.x,enemigo.y])#imprime enemigo
-        #self.display.blit(texto,[800, 0])#imprime puntaje
+        self.display.blit(texto,[800, 0])#imprime puntaje
 
 
 

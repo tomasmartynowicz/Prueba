@@ -8,22 +8,16 @@ class Enemigo(Personaje):                                           #Esta es la 
     #Getters and Setters
         def setImagen(self, imagen):
             self.imagen=imagen
-        def getImagen(self):
-            return imagen
 
         def setX(self, x):
             self.x=x
-        def getX(self):
-            return x
 
         def setY(self, y):
             self.y=y
-        def getY(self):
-            return y
 
     #toPantalla()
         def toPantalla(self,display):  #tipo el toString()
-            return display.blit(self.imagen,[self.x, self.y]) #imprime en pantalla
+            display.blit(self.imagen,[self.x, self.y]) #imprime en pantalla
 
 
         def desplazarIzquierda(self):

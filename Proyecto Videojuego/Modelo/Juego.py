@@ -5,12 +5,26 @@ from modelo.Pantalla import Pantalla
 import pygame
 
 class Juego(object):
-    def __init__(self):
-        self.jugador=Jugador(pygame.image.load('Perro4.png'),0,320,"jugador1")
-        self.enemigo=Enemigo(pygame.image.load('rock.png'),1000,320)
-        self.pantalla=Pantalla(pygame.display.set_caption("Jump the Rock"),pygame.display.set_mode((1080,420)),pygame.image.load('fondo.png'),0,0)
-        self.puntaje=0
+    def __init__(self,jugador,enemigo,pantalla,puntaje):
+        self.jugador=jugador
+        self.enemigo=enemigo
+        self.pantalla=pantalla
+        self.puntaje=puntaje
 
+ #Getter and Setter
+    def setJugador(self, jugador):
+        self.jugador=jugador
+
+    def setEnemigo(self, enemigo):
+        self.enemigo=enemigo
+
+    def setPantalla(self, pantalla):
+        self.pantalla=pantalla
+
+    def setPuntaje(self, puntaje):
+        self.puntaje=puntaje
+
+ #metodos
     def actualizarPantalla(self):
         self.pantalla.cargarPantalla(self.jugador,self.enemigo,self.puntaje)
 
@@ -33,18 +47,6 @@ class Juego(object):
         if self.jugador.y==150 and self.jugador.x==self.enemigo.x:
             respuesta=True
         return respuesta
-
-
-    def mostrarJugador(self):
-        self.pantalla.display.blit(self.jugador.imagen,[self.jugador.x, self.jugador.y])
-        pygame.display.update()
-
-    def mostrarEnemigo(self):
-        self.pantalla.display.blit(self.enemigo.imagen,[self.enemigo.x, self.enemigo.y])
-        pygame.display.update()
-
-    def crearEnemigo(self):
-        self.enemigo=Enemigo(pygame.image.load('rock.png'),1000,350)
 
     def mostrarPuntaje(self):
         fuente = pygame.font.Font(None, 25)

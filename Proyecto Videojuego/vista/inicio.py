@@ -20,13 +20,37 @@ reloj1 = pygame.time.Clock()
 # CONSTANTES Y Inicializacion de variables
 BLANCO = (255, 255, 255)
 
-newGame=Juego()
+
+
+#Prueba Setters
+
+jugador=Jugador(pygame.image.load('Perro4.png'),0,320,"jugador1")
+jugador.setImagen(pygame.image.load('Perro4.png'))
+jugador.setX(0)
+jugador.setY(320)
+jugador.setAlias("jugador1")
+
+enemigo=Enemigo(pygame.image.load('rock.png'),1000,320)
+enemigo.setImagen(pygame.image.load('rock.png'))
+enemigo.setX(1000)
+enemigo.setY(320)
+
+pantalla=Pantalla(pygame.display.set_caption("Jump the Rock"),pygame.display.set_mode((1080,420)),pygame.image.load('fondo.png'),0,0)
+pantalla.setDisplay(pygame.display.set_mode((1080,420)))
+pantalla.setImagen(pygame.image.load('fondo.png'))
+pantalla.setNombre(pygame.display.set_caption("Jump the Rock"))
+pantalla.setX(0)
+pantalla.setY(0)
+
+
+newGame=Juego(jugador,enemigo,pantalla,0)
+newGame.setJugador(jugador)
+newGame.setEnemigo(enemigo)
+newGame.setPantalla(pantalla)
+newGame.setPuntaje(0)
 newGame.actualizarPantalla()
 
 
-#newGame.mostrarJugador()
-#newGame.mostrarEnemigo()
-#newGame.enemigo.desplazarIzquierda(newGame.pantalla.display)
 #newGame.reproducirSonido()
 #salir=True
 
@@ -36,13 +60,8 @@ while salir != True:
     #newGame.pantalla.moverPantalla()
     newGame.enemigo.desplazarIzquierda()
 
-    #enemigo=Enemigo()                  tengo que seguir modificando
-    #enemigo.setImagen('rock.png'),
-    #enemigo.setX(1000)
-    #enemigo.setY(320)
-    #enemigo.toPantalla(newGame.pantalla.display)
-
-
+    enemigo2=Enemigo(pygame.image.load('rock.png'),1000,320)
+    enemigo2.toPantalla(pantalla.display)
 
     for event in pygame.event.get():
 
@@ -52,6 +71,9 @@ while salir != True:
              newGame.jugador.saltar()
              newGame.actualizarPantalla()
              newGame.jugador.caer()
+             #enemigo.setImagen(pygame.image.load('Perro4.png')) ventajas de usar setters
+             #newGame.setEnemigo(enemigo)
+
 
         if event.type == pygame.QUIT:
                 salir = True
