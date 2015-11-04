@@ -1,16 +1,38 @@
-#Esta la estructura de basica de una clase en python.
-class Clase(object):                                             #El parametro object se pone para poder crear subclases apartir de esta clase.
-    def __init__(self):                                          #La funcion __ini__ se ejecuta cuando se crea la clase.
-        self.atributo = 'Este es atributo de la clase'           #El parametro self no se que significa pero tiene que ir.
-    def Metodo(self):
-        print 'Este es metodo de la clase'
+from Modelo.Pantalla import Pantalla
+import pygame, sys
+
+class Menu(object):
+
+    def __init__(self,imagen,inicio,verpuntaje,salir):
+        self.imagen = imagen
+        self.puntaje_nombre = []
+        self.puntaje_valor = []
+        self.botones = [inicio,verpuntaje,salir]
+        self.pantalla = Pantalla(pygame.display.set_caption("Jump the Rock"),pygame.display.set_mode((1080,420)),pygame.image.load(imagen),0,0)
+
+    def verPuntajes(self):
+        rojo = [255,0,0]
+        espacio = ' '
+        n=['1','2','3']
+        c=0
+        FONT = pygame.font.SysFont('monospace',40)
+        y=200
+        SURFACEFONT = FONT.render('MEJORES PUNTAJES',0,rojo)
+        self.pantalla.display.blit(SURFACEFONT,[350,50])
+        while (c <= 2):
+
+            texto = n[c] + espacio + self.puntaje_nombre[c] + espacio + str(self.puntaje_valor[c])
+            SURFACEFONT = FONT.render(texto,0,rojo)
+            self.pantalla.display.blit(SURFACEFONT, [405,y])
+            c=c+1
+            y=y+50
 
 
-class SubClase(Clase):                                           #Esta es la SubClase de Clase. Se define igual pero poniendo como parametro la clase base.
-    def __init__(self):                                          #La funcion __init__ aca esta puesta para llamar a __init__ de la clase base
-        super(SubClase,self).__init__                            #A mi me funciona sin tener que ponerla pero asi compila seguro.
+    def salir(self):
+        return True
 
 
-Objeto = SubClase()                                              #Creo un objeto de la Subclase
 
-Objeto.Metodo()                                                  #Ejecuto el metodo de la clase base
+
+
+
