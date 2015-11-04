@@ -98,3 +98,19 @@ Fecha:03/11/2015
 Descripcion:creacion del proyecto
 Decision:se crea el proyecto, se crean dos carpetas modelo, vista.
 	se crean las clases del diseño y se comienza a realizar las pruebas
+
+--------------------------------------------------------------------------------------------------------
+**************************************************************************************
+--------------------------------------------------------------------------------------------------------
+Reunion:personal
+Integrantes:
+	Guille-
+	Tomas-
+	Maxi-Aprobado
+Fecha:04/11/2015	
+Descripcion:codificacion de clases y pruebas
+Decision:se detectaron nuevos escenarios para resolver de las clases, por ejemplo que el perro tarde
+	menos tiempo en caer, pantalla tenga una lista de imaganes, transparencia de los personajes
+	modificar el metodo de actualizar pantallas para que reciba la lista de imagenes. Unificar la lista
+	de imagenes a resolucion 1080*420pixels.
+

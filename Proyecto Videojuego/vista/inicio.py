@@ -57,11 +57,14 @@ newGame.actualizarPantalla()
 #Bucle principal del videojuego
 while salir != True:
     newGame.actualizarPantalla()
-    #newGame.pantalla.moverPantalla()
+    newGame.pantalla.moverPantalla()
     newGame.enemigo.desplazarIzquierda()
 
-    enemigo2=Enemigo(pygame.image.load('rock.png'),1000,320)
-    enemigo2.toPantalla(pantalla.display)
+    #enemigo2=Enemigo(pygame.image.load('rock.png'),1000,320)
+    #enemigo2.toPantalla(pantalla.display)
+
+    #enemigo3=Enemigo(pygame.image.load('rock.png'),800,320)
+    #enemigo3.toPantalla(pantalla.display)
 
     for event in pygame.event.get():
 
@@ -71,8 +74,10 @@ while salir != True:
              newGame.jugador.saltar()
              newGame.actualizarPantalla()
              newGame.jugador.caer()
-             #enemigo.setImagen(pygame.image.load('Perro4.png')) ventajas de usar setters
-             #newGame.setEnemigo(enemigo)
+             pantalla.setImagen(pygame.image.load('fondo2.png'))
+             newGame.setPantalla(pantalla)
+            # enemigo.setImagen(pygame.image.load('Perro4.png')) #ventajas de usar setters
+            # newGame.setEnemigo(enemigo)
 
 
         if event.type == pygame.QUIT:

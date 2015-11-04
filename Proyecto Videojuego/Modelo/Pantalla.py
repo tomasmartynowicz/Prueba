@@ -9,7 +9,7 @@ class Pantalla(object):                                             #El parametr
         self.imagen=imagen
         self.x=x
         self.y=y
-
+#self.listaImagen=[]
     #Setters
     def setNombre(self, nombre):
             self.nombre=nombre

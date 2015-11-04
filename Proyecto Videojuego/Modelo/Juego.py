@@ -32,6 +32,7 @@ class Juego(object):
             fuente = pygame.font.Font(None, 72)
             texto = fuente.render("Game Over!! Score: "+str(self.puntaje), True, (255, 255, 255))
             self.pantalla.display.blit(texto,[100, 0])
+
             pygame.event.wait()
         if self.saltoRoca()==True:
             self.puntaje=self.puntaje+10
