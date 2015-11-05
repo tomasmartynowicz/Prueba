@@ -25,17 +25,17 @@ class Juego(object):
         self.puntaje=puntaje
 
  #metodos
-    def actualizarPantalla(self):
-        self.pantalla.cargarPantalla(self.jugador,self.enemigo,self.puntaje)
-
-        if self.colision()==True:
-            fuente = pygame.font.Font(None, 72)
-            texto = fuente.render("Game Over!! Score: "+str(self.puntaje), True, (255, 255, 255))
-            self.pantalla.display.blit(texto,[100, 0])
-
-            pygame.event.wait()
+    def actualizarPantalla(self): #retorna falso si hay colision
+        perdiste=False
+        self.pantalla.cargarPantalla(self.jugador,self.enemigo,self.puntaje,self.pantalla)
         if self.saltoRoca()==True:
-            self.puntaje=self.puntaje+10
+            self.puntaje=self.puntaje+100
+        if self.colision()==True:
+            perdiste=True
+            self.gameOver()
+        return perdiste
+
+
 
     def colision(self):
         respuesta=False
@@ -45,7 +45,7 @@ class Juego(object):
 
     def saltoRoca(self):
         respuesta=False
-        if self.jugador.y==150 and self.jugador.x==self.enemigo.x:
+        if self.jugador.y<300 and self.jugador.x==self.enemigo.x:
             respuesta=True
         return respuesta
 
@@ -57,6 +57,11 @@ class Juego(object):
     def reproducirSonido(self):
         pygame.mixer.music.load('dog.mp3')
         pygame.mixer.music.play(-1)
+
+    def gameOver(self):
+        fuente = pygame.font.Font(None, 72)
+        texto = fuente.render("Game Over!! Score: "+str(self.puntaje), True, (255, 255, 255))
+        self.pantalla.display.blit(texto,[0, 0])
 
 
 

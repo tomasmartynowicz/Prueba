@@ -28,4 +28,12 @@ class Enemigo(Personaje):                                           #Esta es la 
                self.x=self.x-10
                self.y=320
 
+        def desplazarIzquierdaRapido(self):
+            if self.x<-16:
+                self.x=1000
+                self.y=320
+            else:
+               self.x=self.x-40
+               self.y=320
+
 

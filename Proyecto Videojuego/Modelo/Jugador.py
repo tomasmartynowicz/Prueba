@@ -32,13 +32,21 @@ class Jugador(Personaje):                                           #Esta es la 
             display.blit(self.imagen,[self.x, self.y]) #imprime en pantalla
 
     #metodos
-        def saltar(self):
-            self.x=0
-            self.y=150
 
-        def caer(self):
-            self.x=0
-            self.y=320
+
+
+        def subir(self):
+            if self.y>=100:
+                self.y=self.y-70
+            if self.y<=100:
+                self.y=100
+                self.bajar()
+
+        def bajar(self):
+            if self.y>=100:
+                self.y=self.y+70
+            if self.y>320:
+                self.y=320
 
         def animar(self):
             print 'en contruccion'

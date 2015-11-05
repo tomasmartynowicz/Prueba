@@ -33,21 +33,22 @@ class Pantalla(object):                                             #El parametr
     #metodos
 
     def moverPantalla(self):
-        if self.x<-400:
-            self.x=1080
+        if self.x<=-2500:
+            self.x=0
             self.y=420
         else:
             self.x=self.x-2
             self.y=0
 
-    def cargarPantalla(self,jugador,enemigo,puntaje):
+    def cargarPantalla(self,jugador,enemigo,puntaje,pantalla):
         fuente = pygame.font.Font(None, 25)
         texto = fuente.render("Jum the rock!! Score: "+str(puntaje), True, (255, 255, 255))
 
-        self.display.blit(self.imagen,[self.x, self.y]) #imprime pantalla
+        #self.display.blit(self.imagen,[self.x, self.y]) #imprime pantalla
+        pantalla.toPantalla()
         jugador.toPantalla(self.display)
         enemigo.toPantalla(self.display)
-        self.display.blit(texto,[800, 0])#imprime puntaje
+        self.display.blit(texto,[0, 0])#imprime puntaje
 
 
 
