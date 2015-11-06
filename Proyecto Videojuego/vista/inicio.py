@@ -19,6 +19,8 @@ reloj1 = pygame.time.Clock()
 
 # CONSTANTES Y Inicializacion de variables
 BLANCO = (255, 255, 255)
+salto = False
+tiempo=1
 
 
 
@@ -70,14 +72,17 @@ while salir != True:
 
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_SPACE]:
-             newGame.jugador.saltar()
-             newGame.actualizarPantalla()
-             newGame.jugador.caer()
-             pantalla.setImagen(pygame.image.load('fondo2.png'))
-             newGame.setPantalla(pantalla)
-            # enemigo.setImagen(pygame.image.load('Perro4.png')) #ventajas de usar setters
-            # newGame.setEnemigo(enemigo)
+
+        if keys[pygame.K_SPACE] and salto == False:
+            tiempo = 1
+            salto = True
+
+        if salto == True:
+            newGame.jugador.saltar(tiempo)
+            newGame.actualizarPantalla()
+            if newGame.jugador.y >= 320:
+                salto = False
+            tiempo = tiempo + 1
 
 
         if event.type == pygame.QUIT:
