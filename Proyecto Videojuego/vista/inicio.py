@@ -70,6 +70,7 @@ while salir != True:
 
     for event in pygame.event.get():
 
+
         keys = pygame.key.get_pressed()
 
 
@@ -89,6 +90,7 @@ while salir != True:
                 salir = True
 
 
+    pygame.event.post(event)
     reloj1.tick(30)
 
     pygame.display.update()
