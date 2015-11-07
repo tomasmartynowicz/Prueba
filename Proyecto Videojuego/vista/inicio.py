@@ -1,7 +1,3 @@
-#from Clases.Menu import Clase     Asi se importa una clase. "Clases" es la carpeta
-#                                  "Menu" el archivo .py y "clase" la clase que se importa.
-#                                  Creo que la subclase se importa automaticamente junto con la clase. No estoy seguro.
-
 import pygame
 from modelo.Jugador import Jugador
 from modelo.Enemigo import Enemigo
@@ -24,77 +20,75 @@ BLANCO = (255, 255, 255)
 
 #Prueba Setters
 
-jugador=Jugador(pygame.image.load('Perro4.png'),0,320,"jugador1")
-jugador.setImagen(pygame.image.load('Perro4.png'))
-jugador.setX(0)
-jugador.setY(320)
-jugador.setAlias("jugador1")
+jugador=Jugador('Perro4.png',0,320,"jugador1")
 
-enemigo=Enemigo(pygame.image.load('rock.png'),1000,320)
-enemigo.setImagen(pygame.image.load('rock.png'))
-enemigo.setX(1000)
-enemigo.setY(320)
 
-pantalla=Pantalla(pygame.display.set_caption("Jump the Rock"),pygame.display.set_mode((1080,420)),pygame.image.load('fondo.png'),0,0)
-pantalla.setDisplay(pygame.display.set_mode((1080,420)))
-pantalla.setImagen(pygame.image.load('fondo.png'))
-pantalla.setNombre(pygame.display.set_caption("Jump the Rock"))
+enemigo=Enemigo('rock.png',500,320)
+
+pantalla=Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'fondo.png',0,0)
+pantalla.setDisplay(1080 ,420)
+pantalla.setImagen('marte2.jpg')
+pantalla.setNombre("Jump the Rock")
 pantalla.setX(0)
 pantalla.setY(0)
 
 
-newGame=Juego(jugador,enemigo,pantalla,0)
-newGame.setJugador(jugador)
-newGame.setEnemigo(enemigo)
-newGame.setPantalla(pantalla)
-newGame.setPuntaje(0)
+
+
+newGame=Juego(jugador,enemigo,pantalla,0,'dog.mp3')
+
 newGame.actualizarPantalla()
 
-
-#newGame.reproducirSonido()
+newGame.reproducirSonido()
 #salir=True
-
+saltar=False
 #Bucle principal del videojuego
-while salir != True:
+while salir != True and newGame.actualizarPantalla()==False:
     newGame.actualizarPantalla()
+
+
     newGame.pantalla.moverPantalla()
-    newGame.enemigo.desplazarIzquierda()
 
-    #enemigo2=Enemigo(pygame.image.load('rock.png'),1000,320)
-    #enemigo2.toPantalla(pantalla.display)
 
-    #enemigo3=Enemigo(pygame.image.load('rock.png'),800,320)
-    #enemigo3.toPantalla(pantalla.display)
+    if saltar==True:
+          newGame.jugador.subir()
+    else:
+          newGame.jugador.bajar()
+
+    if newGame.puntaje>-1:
+        newGame.enemigo.desplazarIzquierda()
+        enemigo.setImagen('rock.png')
+        newGame.setEnemigo(enemigo)
+
+    if newGame.puntaje>=500:
+        newGame.enemigo.desplazarIzquierda()
+        enemigo.setImagen('rock2.png')
+        newGame.setEnemigo(enemigo)
+
+    if newGame.puntaje>=1000:
+        newGame.enemigo.desplazarIzquierdaRapido()
+        enemigo.setImagen('rock3.png')
+        newGame.setEnemigo(enemigo)
+        newGame.setSonido('Yet Another Movie.mp3')
+        newGame.reproducirSonido()
 
     for event in pygame.event.get():
 
-        keys = pygame.key.get_pressed()
+            keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_SPACE]:
-             newGame.jugador.saltar()
-             newGame.actualizarPantalla()
-             newGame.jugador.caer()
-             pantalla.setImagen(pygame.image.load('fondo2.png'))
-             newGame.setPantalla(pantalla)
-            # enemigo.setImagen(pygame.image.load('Perro4.png')) #ventajas de usar setters
-            # newGame.setEnemigo(enemigo)
+            if keys[pygame.K_SPACE] and saltar==False:
+                saltar=True
+            else:
+                saltar=False
 
-
-        if event.type == pygame.QUIT:
-                salir = True
+            if event.type == pygame.QUIT:
+                      salir = True
 
 
     reloj1.tick(30)
-
     pygame.display.update()
-
-
-
 
 
 pygame.quit()
 quit()
-
-
-
 

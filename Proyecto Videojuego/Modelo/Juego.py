@@ -5,11 +5,12 @@ from modelo.Pantalla import Pantalla
 import pygame
 
 class Juego(object):
-    def __init__(self,jugador,enemigo,pantalla,puntaje):
+    def __init__(self,jugador,enemigo,pantalla,puntaje,sonido):
         self.jugador=jugador
         self.enemigo=enemigo
         self.pantalla=pantalla
         self.puntaje=puntaje
+        self.sonido=pygame.mixer.music.load(sonido)
 
  #Getter and Setter
     def setJugador(self, jugador):
@@ -23,6 +24,9 @@ class Juego(object):
 
     def setPuntaje(self, puntaje):
         self.puntaje=puntaje
+
+    def setSonido(self, sonido):
+        self.sonido=pygame.mixer.music.load(sonido)
 
  #metodos
     def actualizarPantalla(self): #retorna falso si hay colision
@@ -55,7 +59,7 @@ class Juego(object):
         self.pantalla.display.blit(texto,[800, 0])
 
     def reproducirSonido(self):
-        pygame.mixer.music.load('dog.mp3')
+        #pygame.mixer.music.load('Yet Another Movie.mp3') #es dog.mp3
         pygame.mixer.music.play(-1)
 
     def gameOver(self):

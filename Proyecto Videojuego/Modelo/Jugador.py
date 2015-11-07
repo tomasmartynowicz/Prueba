@@ -9,7 +9,7 @@ class Jugador(Personaje):                                           #Esta es la 
 
     #Getters and Setters
         def setImagen(self, imagen):
-            self.imagen=imagen
+            self.imagen=pygame.image.load(imagen)
         def getImagen(self):
             return imagen
 
