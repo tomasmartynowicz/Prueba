@@ -16,6 +16,7 @@ reloj1 = pygame.time.Clock()
 BLANCO = (255, 255, 255)
 salto = False
 tiempo=1
+tiempoEnemigo=1
 salir=False
 
 
@@ -24,7 +25,7 @@ salir=False
 jugador=Jugador('Perro4.png',0,320,"jugador1")
 
 
-enemigo=Enemigo('rock.png',500,320)
+enemigo=Enemigo('rock.png',1000,320)
 
 pantalla=Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'fondo.png',0,0)
 pantalla.setDisplay(1080 ,420)
@@ -44,20 +45,26 @@ newGame.setSonido('Yet Another Movie.mp3')
 
 newGame.actualizarPantalla()
 
-#newGame.reproducirSonido()
+newGame.reproducirSonido()
 
 saltar=False
 #Bucle principal del videojuego
 while salir != True:
      newGame.actualizarPantalla()
      newGame.pantalla.moverPantalla()
-     newGame.enemigo.desplazarIzquierda()
 
-     #enemigo2=Enemigo(pygame.image.load('rock.png'),1000,320)
-     #enemigo2.toPantalla(pantalla.display)
+     newGame.enemigo.desplazarIzquierda2(tiempoEnemigo)
+     tiempoEnemigo=newGame.enemigo.desplazarIzquierda2(tiempoEnemigo)
 
-     #enemigo3=Enemigo(pygame.image.load('rock.png'),800,320)
-     #enemigo3.toPantalla(pantalla.display)
+     #Cambia enemigo segun puntaje
+
+     if newGame.puntaje>=500 and tiempoEnemigo==1:
+        enemigo.setImagen('rock2.png')
+        newGame.setEnemigo(enemigo)
+
+     if newGame.puntaje>=1000 and tiempoEnemigo==1:
+        enemigo.setImagen('rock.png')
+        newGame.setEnemigo(enemigo)
 
      for event in pygame.event.get():
 
@@ -81,16 +88,10 @@ while salir != True:
                  salir = True
 
 
-<<<<<<< HEAD
      pygame.event.post(event)
      reloj1.tick(30)
 
      pygame.display.update()
-=======
-        pygame.event.post(event)
-    reloj1.tick(30)
-    pygame.display.update()
->>>>>>> c109983f68c7d2605f82cf4f1ac3fb9485d36b6d
 
 
 pygame.quit()

@@ -33,7 +33,7 @@ class Pantalla(object):                                             #El parametr
     #metodos
 
     def moverPantalla(self):
-        if self.x<=-2500:
+        if self.x<=-1900:
             self.x=0
             self.y=420
         else:

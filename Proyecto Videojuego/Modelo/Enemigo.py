@@ -44,4 +44,13 @@ class Enemigo(Personaje):                                           #Esta es la 
                self.x=self.x-60
                self.y=320
 
+        def desplazarIzquierda2(self, t):
+            if t>150:
+                self.x=1000
+                self.x = int(self.x)
+                t=1
+            else:
+               self.x=1000 -t*8
+               t=t+2
+            return t
 
