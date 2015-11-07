@@ -15,6 +15,8 @@ reloj1 = pygame.time.Clock()
 
 # CONSTANTES Y Inicializacion de variables
 BLANCO = (255, 255, 255)
+salto = False
+tiempo=1
 
 
 
@@ -50,31 +52,21 @@ while salir != True and newGame.actualizarPantalla()==False:
     newGame.pantalla.moverPantalla()
 
 
-    if saltar==True:
-          newGame.jugador.subir()
-    else:
-          newGame.jugador.bajar()
+    if keys[pygame.K_SPACE] and salto == False:
+            tiempo = 1
+            salto = True
 
-    if newGame.puntaje>-1:
-        newGame.enemigo.desplazarIzquierda()
-        enemigo.setImagen('rock.png')
-        newGame.setEnemigo(enemigo)
-
-    if newGame.puntaje>=500:
-        newGame.enemigo.desplazarIzquierda()
-        enemigo.setImagen('rock2.png')
-        newGame.setEnemigo(enemigo)
-
-    if newGame.puntaje>=1000:
-        newGame.enemigo.desplazarIzquierdaRapido()
-        enemigo.setImagen('rock3.png')
-        newGame.setEnemigo(enemigo)
-        newGame.setSonido('Yet Another Movie.mp3')
-        newGame.reproducirSonido()
+    if salto == True:
+            newGame.jugador.saltar(tiempo)
+            newGame.actualizarPantalla()
+            if newGame.jugador.y >= 320:
+                salto = False
+            tiempo = tiempo + 1
 
     for event in pygame.event.get():
 
             keys = pygame.key.get_pressed()
+
 
             if keys[pygame.K_SPACE] and saltar==False:
                 saltar=True

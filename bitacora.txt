@@ -22,7 +22,7 @@ Decision: Crear usuario en github y repositorio compartido para el proyecto.
 Reunion: virtual
 Integrantes:
 	Guille-Aprobado
-	Tomas-
+	Tomas-Aprobado
 	Maxi-Aprobado
 Fecha:14/9/2015
 Descipcion:La historia del juego 
@@ -34,7 +34,7 @@ Decision: crear un txt con la historia del juego y su descripcion de lo que hace
 Reunion: virtual
 Integrantes:
 	Guille- Aprobado
-	Tomas-
+	Tomas-Aprobado
 	Maxi-
 Fecha:14/9/2015
 Descripción: Se puso el nombre al juego " Jump the rock! "
@@ -58,7 +58,7 @@ Decision:Crear bitacora.txt y proyecto en kandboard, se sube al repositorio
 Reunion:virtual
 Integrantes:
 	Guille-Aprobado
-	Tomas-
+	Tomas-Aprobado
 	Maxi-Aprobado
 Fecha:10/10/2015	
 Descripcion:Aprobar ambito de desarrollo, especificacion de procesos y
@@ -70,7 +70,7 @@ Decision: "aclarar decision en integrantes"
 Reunion:personal
 Integrantes:
 	Guille-Aprobado
-	Tomas-
+	Tomas-Aprobado
 	Maxi-Aprobado
 Fecha:21/10/2015	
 Descripcion:Aprobar diagrama de clases y crear proyecto videojuego
@@ -81,7 +81,7 @@ Decision:terminamos con la etapa de diseño, empezamos con las tareas de codifica
 Reunion:virtual
 Integrantes:
 	Guille-Aprobado
-	Tomas-
+	Tomas-Aprobado
 	Maxi-Aprobado
 Fecha:21/10/2015	
 Descripcion:el Diagrama de clases se encuentra en Disen~o y esta en formato pdf
@@ -92,7 +92,7 @@ Decision:Aprobar diagrama de clases version final
 Reunion:virtual
 Integrantes:
 	Guille-Aprobado
-	Tomas-
+	Tomas-Aprobado
 	Maxi-Aprobado
 Fecha:03/11/2015	
 Descripcion:creacion del proyecto
@@ -105,7 +105,7 @@ Decision:se crea el proyecto, se crean dos carpetas modelo, vista.
 Reunion:personal
 Integrantes:
 	Guille-
-	Tomas-
+	Tomas-Aprobado
 	Maxi-Aprobado
 Fecha:04/11/2015	
 Descripcion:codificacion de clases y pruebas
