@@ -8,7 +8,6 @@ from modelo.Pantalla import Pantalla
 pygame.init()
 
 
-salir = False
 
 reloj1 = pygame.time.Clock()
 
@@ -17,7 +16,7 @@ reloj1 = pygame.time.Clock()
 BLANCO = (255, 255, 255)
 salto = False
 tiempo=1
-
+salir=False
 
 
 #Prueba Setters
@@ -36,49 +35,56 @@ pantalla.setY(0)
 
 
 
-
 newGame=Juego(jugador,enemigo,pantalla,0,'dog.mp3')
+newGame.setJugador(jugador)
+newGame.setEnemigo(enemigo)
+newGame.setPantalla(pantalla)
+newGame.setPuntaje(0)
+newGame.setSonido('Yet Another Movie.mp3')
 
 newGame.actualizarPantalla()
 
-newGame.reproducirSonido()
-#salir=True
+#newGame.reproducirSonido()
+
 saltar=False
 #Bucle principal del videojuego
-while salir != True and newGame.actualizarPantalla()==False:
-    newGame.actualizarPantalla()
+while salir != True:
+     newGame.actualizarPantalla()
+     newGame.pantalla.moverPantalla()
+     newGame.enemigo.desplazarIzquierda()
+
+     #enemigo2=Enemigo(pygame.image.load('rock.png'),1000,320)
+     #enemigo2.toPantalla(pantalla.display)
+
+     #enemigo3=Enemigo(pygame.image.load('rock.png'),800,320)
+     #enemigo3.toPantalla(pantalla.display)
+
+     for event in pygame.event.get():
 
 
-    newGame.pantalla.moverPantalla()
+         keys = pygame.key.get_pressed()
 
 
-    if keys[pygame.K_SPACE] and salto == False:
-            tiempo = 1
-            salto = True
+         if keys[pygame.K_SPACE] and salto == False:
+             tiempo = 1
+             salto = True
 
-    if salto == True:
-            newGame.jugador.saltar(tiempo)
-            newGame.actualizarPantalla()
-            if newGame.jugador.y >= 320:
-                salto = False
-            tiempo = tiempo + 1
-
-    for event in pygame.event.get():
-
-            keys = pygame.key.get_pressed()
+         if salto == True:
+             newGame.jugador.saltar(tiempo)
+             newGame.actualizarPantalla()
+             if newGame.jugador.y >= 320:
+                 salto = False
+             tiempo = tiempo + 1
 
 
-            if keys[pygame.K_SPACE] and saltar==False:
-                saltar=True
-            else:
-                saltar=False
-
-            if event.type == pygame.QUIT:
-                      salir = True
+         if event.type == pygame.QUIT:
+                 salir = True
 
 
-    reloj1.tick(30)
-    pygame.display.update()
+     pygame.event.post(event)
+     reloj1.tick(30)
+
+     pygame.display.update()
 
 
 pygame.quit()
