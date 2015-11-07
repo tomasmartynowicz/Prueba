@@ -40,6 +40,11 @@ class Pantalla(object):                                             #El parametr
             self.x=self.x-2 #es 2
             self.y=0
 
+
+    def detenerPantalla(self):
+            self.x=0
+            self.y=420
+
     def cargarPantalla(self,jugador,enemigo,puntaje,pantalla):
         fuente = pygame.font.Font(None, 25)
         texto = fuente.render("Jum the rock!! Score: "+str(puntaje), True, (255, 255, 255))

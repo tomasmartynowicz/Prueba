@@ -59,8 +59,10 @@ class Juego(object):
         self.pantalla.display.blit(texto,[800, 0])
 
     def reproducirSonido(self):
-        #pygame.mixer.music.load('Yet Another Movie.mp3') #es dog.mp3
         pygame.mixer.music.play(-1)
+
+    def stopSonido(self):
+        pygame.mixer.music.stop()
 
     def gameOver(self):
         fuente = pygame.font.Font(None, 72)

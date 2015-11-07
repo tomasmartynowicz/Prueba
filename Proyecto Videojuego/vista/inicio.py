@@ -45,16 +45,22 @@ newGame.setSonido('Yet Another Movie.mp3')
 
 newGame.actualizarPantalla()
 
-newGame.reproducirSonido()
+#newGame.reproducirSonido()
 
 saltar=False
 #Bucle principal del videojuego
 while salir != True:
-     newGame.actualizarPantalla()
-     newGame.pantalla.moverPantalla()
 
-     newGame.enemigo.desplazarIzquierda2(tiempoEnemigo)
-     tiempoEnemigo=newGame.enemigo.desplazarIzquierda2(tiempoEnemigo)
+     if newGame.actualizarPantalla()!=True: #mientras no pierda
+        newGame.pantalla.moverPantalla()
+        newGame.enemigo.desplazarIzquierda2(tiempoEnemigo)
+        tiempoEnemigo=newGame.enemigo.desplazarIzquierda2(tiempoEnemigo)
+     else:
+        newGame.pantalla.detenerPantalla()
+        newGame.setSonido('punch.wav')
+        newGame.reproducirSonido()
+        pygame.display.update()
+        newGame.stopSonido()
 
      #Cambia enemigo segun puntaje
 
@@ -92,10 +98,7 @@ while salir != True:
      reloj1.tick(30)
 
      pygame.display.update()
-<<<<<<< HEAD
-=======
 
->>>>>>> 19b8e0d7a598f29a79c637cd3e403773422a507c
 
 
 pygame.quit()
