@@ -92,6 +92,10 @@ while salir != True:
      reloj1.tick(30)
 
      pygame.display.update()
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19b8e0d7a598f29a79c637cd3e403773422a507c
 
 
 pygame.quit()
