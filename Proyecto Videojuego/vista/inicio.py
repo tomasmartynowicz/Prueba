@@ -76,7 +76,7 @@ while salir != True and newGame.actualizarPantalla()==False:
             if event.type == pygame.QUIT:
                       salir = True
 
-
+        pygame.event.post(event)
     reloj1.tick(30)
     pygame.display.update()
 
