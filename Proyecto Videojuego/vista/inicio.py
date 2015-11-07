@@ -81,10 +81,16 @@ while salir != True:
                  salir = True
 
 
+<<<<<<< HEAD
      pygame.event.post(event)
      reloj1.tick(30)
 
      pygame.display.update()
+=======
+        pygame.event.post(event)
+    reloj1.tick(30)
+    pygame.display.update()
+>>>>>>> c109983f68c7d2605f82cf4f1ac3fb9485d36b6d
 
 
 pygame.quit()
