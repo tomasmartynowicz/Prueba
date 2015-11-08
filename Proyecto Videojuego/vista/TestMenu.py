@@ -4,7 +4,7 @@ from modelo.Enemigo import Enemigo
 from modelo.Sonido import Sonido
 from modelo.Juego import Juego
 from modelo.Pantalla import Pantalla
-
+from modelo.Menu import Menu
 pygame.init()
 
 
@@ -20,73 +20,53 @@ tiempoEnemigo=1
 salir=False
 
 
-#Prueba Setters
+#instancia de las clases
 
 jugador=Jugador('Perro4.png',0,320,"jugador1")
 
-
 enemigo=Enemigo('rock.png',1000,320)
 
-pantalla=Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'fondo.png',0,0)
-pantalla.setDisplay(1080 ,420)
-pantalla.setImagen('marte2.jpg')
-pantalla.setNombre("Jump the Rock")
-pantalla.setX(0)
-pantalla.setY(0)
+#pantalla=Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'marte2.jpg',0,0)
+
+#newGame=Juego(jugador,enemigo,pantalla,0,'dog.mp3')
 
 
+menu=Menu()
 
-newGame=Juego(jugador,enemigo,pantalla,0,'dog.mp3')
-newGame.setJugador(jugador)
-newGame.setEnemigo(enemigo)
-newGame.setPantalla(pantalla)
-newGame.setPuntaje(0)
-newGame.setSonido('Yet Another Movie.mp3')
+menu.mostrarMenu()
+#pantalla=menu.pantalla
 
-newGame.actualizarPantalla()
+#pantalla.blit(menu.imagen,[0,0])
 
-newGame.reproducirSonido()
 
-saltar=False
 #Bucle principal del videojuego
 while salir != True:
-     newGame.actualizarPantalla()
-     newGame.pantalla.moverPantalla()
 
-     newGame.enemigo.desplazarIzquierda2(tiempoEnemigo)
-     tiempoEnemigo=newGame.enemigo.desplazarIzquierda2(tiempoEnemigo)
 
-     #Cambia enemigo segun puntaje
-
-     if newGame.puntaje>=500 and tiempoEnemigo==1:
-        enemigo.setImagen('rock2.png')
-        newGame.setEnemigo(enemigo)
-
-     if newGame.puntaje>=1000 and tiempoEnemigo==1:
-        enemigo.setImagen('rock.png')
-        newGame.setEnemigo(enemigo)
 
      for event in pygame.event.get():
 
 
          keys = pygame.key.get_pressed()
 
+         if keys[pygame.K_1] or keys[menu.opcion_jugar]:
 
-         if keys[pygame.K_SPACE] and salto == False:
-             tiempo = 1
-             salto = True
+            newGame=Juego(jugador,enemigo,menu.p[1],0,'dog.mp3')
+            newGame.iniciarJuego(salir,event)
+            newGame.terminarJuego()
+            menu.mostrarMenu()
 
-         if salto == True:
-             newGame.jugador.saltar(tiempo)
-             newGame.actualizarPantalla()
-             if newGame.jugador.y >= 320:
-                 salto = False
-             tiempo = tiempo + 1
 
+         if keys[pygame.K_2] or keys[menu.opcion_verPuntaje]:
+            newGame2=Juego(jugador,enemigo,menu.p[1],0,'dog.mp3')
+            newGame2.iniciarJuego(salir,event)
+            menu.mostrarMenu()
+
+         if keys[pygame.K_3] or keys[menu.opcion_salir]:
+            salir=True
 
          if event.type == pygame.QUIT:
                  salir = True
-
 
      pygame.event.post(event)
      reloj1.tick(30)
@@ -97,4 +77,6 @@ while salir != True:
 
 pygame.quit()
 quit()
+
+
 

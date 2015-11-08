@@ -27,7 +27,7 @@ jugador=Jugador('Perro4.png',0,320,"jugador1")
 
 enemigo=Enemigo('rock.png',990,320)
 
-pantalla=Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'fondo.png',0,0)
+pantalla=Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'fondo.jpg',0,0)
 pantalla.setDisplay(1080 ,420)
 pantalla.setImagen('marte2.jpg')
 pantalla.setNombre("Jump the Rock")
