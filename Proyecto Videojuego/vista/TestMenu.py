@@ -22,9 +22,9 @@ salir=False
 
 #instancia de las clases
 
-jugador=Jugador('Perro4.png',0,320,"jugador1")
+#jugador=Jugador('Perro4.png',0,320,"jugador1")
 
-enemigo=Enemigo('rock.png',1000,320)
+#enemigo=Enemigo('rock.png',1000,320)
 
 #pantalla=Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'marte2.jpg',0,0)
 
@@ -42,6 +42,8 @@ menu.mostrarMenu()
 #Bucle principal del videojuego
 while salir != True:
 
+     jugador=Jugador('Perro4.png',0,320,"jugador1")
+     enemigo=Enemigo('rock.png',1000,320)
 
 
      for event in pygame.event.get():
@@ -53,13 +55,10 @@ while salir != True:
 
             newGame=Juego(jugador,enemigo,menu.p[1],0,'dog.mp3')
             newGame.iniciarJuego(salir,event)
-            newGame.terminarJuego()
             menu.mostrarMenu()
 
 
          if keys[pygame.K_2] or keys[menu.opcion_verPuntaje]:
-            newGame2=Juego(jugador,enemigo,menu.p[1],0,'dog.mp3')
-            newGame2.iniciarJuego(salir,event)
             menu.mostrarMenu()
 
          if keys[pygame.K_3] or keys[menu.opcion_salir]:

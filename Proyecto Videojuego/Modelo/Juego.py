@@ -89,12 +89,10 @@ class Juego(object):
                  #Cambia enemigo segun puntaje
 
                 if self.puntaje>=500 and tiempoEnemigo==1:
-                    enemigo.setImagen('rock2.png')
-                    self.setEnemigo(enemigo)
+                    self.enemigo.setImagen('rock2.png')
 
                 if self.puntaje>=1000 and tiempoEnemigo==1:
-                    enemigo.setImagen('rock.png')
-                    self.setEnemigo(enemigo)
+                    self.enemigo.setImagen('rock.png')
 
                 for event in pygame.event.get():
 
@@ -121,13 +119,6 @@ class Juego(object):
                 pygame.event.post(event)
                 reloj1.tick(30)
                 pygame.display.update()
-
-    def terminarJuego(self):
-        self.jugador=""
-        self.enemigo=""
-        self.pantalla=""
-        self.puntaje=""
-        self.sonido=""
 
 
 
