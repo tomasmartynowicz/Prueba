@@ -19,6 +19,9 @@ class Juego(object):
     def setEnemigo(self, enemigo):
         self.enemigo=enemigo
 
+    def getEnemigo(self):
+            return self.enemigo
+
     def setPantalla(self, pantalla):
         self.pantalla=pantalla
 
@@ -68,6 +71,65 @@ class Juego(object):
         fuente = pygame.font.Font(None, 72)
         texto = fuente.render("Game Over!! Score: "+str(self.puntaje), True, (255, 255, 255))
         self.pantalla.display.blit(texto,[0, 0])
+
+    def iniciarJuego(self,salir,event):
+        tiempo=1
+        tiempoEnemigo=1
+        salto = False
+        saltar=False
+        reloj1 = pygame.time.Clock()
+        #Bucle principal del videojuego
+        while salir != True and self.actualizarPantalla()!=True:
+
+                self.pantalla.moverPantalla()
+                self.enemigo.desplazarIzquierda2(tiempoEnemigo)
+                tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
+
+
+                 #Cambia enemigo segun puntaje
+
+                if self.puntaje>=500 and tiempoEnemigo==1:
+                    enemigo.setImagen('rock2.png')
+                    self.setEnemigo(enemigo)
+
+                if self.puntaje>=1000 and tiempoEnemigo==1:
+                    enemigo.setImagen('rock.png')
+                    self.setEnemigo(enemigo)
+
+                for event in pygame.event.get():
+
+
+                     keys = pygame.key.get_pressed()
+
+
+                     if keys[pygame.K_SPACE] and salto == False:
+                         tiempo = 1
+                         salto = True
+
+                     if salto == True:
+                         self.jugador.saltar(tiempo)
+                         self.actualizarPantalla()
+                         if self.jugador.y >= 320:
+                             salto = False
+                         tiempo = tiempo + 1
+
+
+                     if event.type == pygame.QUIT:
+                             salir = True
+
+
+                pygame.event.post(event)
+                reloj1.tick(30)
+                pygame.display.update()
+
+    def terminarJuego(self):
+        self.jugador=""
+        self.enemigo=""
+        self.pantalla=""
+        self.puntaje=""
+        self.sonido=""
+
+
 
 
 
