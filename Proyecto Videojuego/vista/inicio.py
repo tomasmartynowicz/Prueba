@@ -15,7 +15,6 @@ reloj1 = pygame.time.Clock()
 # CONSTANTES Y Inicializacion de variables
 BLANCO = (255, 255, 255)
 salto = False
-tiempo=1
 tiempoEnemigo=1
 salir=False
 
@@ -79,15 +78,13 @@ while salir != True:
 
 
          if keys[pygame.K_SPACE] and salto == False:
-             tiempo = 1
              salto = True
 
          if salto == True:
-             newGame.jugador.saltar(tiempo)
+             newGame.jugador.saltar()
              newGame.actualizarPantalla()
              if newGame.jugador.y >= 320:
                  salto = False
-             tiempo = tiempo + 1
 
 
          if event.type == pygame.QUIT:
