@@ -65,14 +65,17 @@ while salir != True:
             menu.mostrarGameOver()
             puntaje.valor=newGame.puntaje
             puntaje.toPantalla(menu.pantalla[2].display)
-            #menu.mostrarMenu()
 
 
          if keys[pygame.K_2] or keys[menu.opcion_verPuntaje]:
-            menu.mostrarMenu()
+             menu.PantallaPuntaje()#muestra la pantalla
+             puntaje.toListaPuntaje(menu.pantalla[3].display,menu.lista_puntaje)
 
          if keys[pygame.K_3] or keys[menu.opcion_salir]:
             salir=True
+
+         if keys[menu.opcion_menu]:
+            menu.mostrarMenu()
 
          if event.type == pygame.QUIT:
                  salir = True
