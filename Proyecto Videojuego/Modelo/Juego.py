@@ -2,15 +2,16 @@ from modelo.Personaje import Personaje
 from modelo.Jugador import Jugador
 from modelo.Enemigo import Enemigo
 from modelo.Pantalla import Pantalla
+from modelo.Sonido import Sonido
 import pygame
 
 class Juego(object):
-    def __init__(self,jugador,enemigo,pantalla,puntaje,sonido):
+    def __init__(self,jugador,enemigo,pantalla,puntaje):
         self.jugador=jugador
         self.enemigo=enemigo
         self.pantalla=pantalla
         self.puntaje=puntaje
-        self.sonido=pygame.mixer.music.load(sonido)
+        self.sonido=Sonido()
 
  #Getter and Setter
     def setJugador(self, jugador):
@@ -28,8 +29,6 @@ class Juego(object):
     def setPuntaje(self, puntaje):
         self.puntaje=puntaje
 
-    def setSonido(self, sonido):
-        self.sonido=pygame.mixer.music.load(sonido)
 
  #metodos
     def actualizarPantalla(self): #retorna falso si hay colision
@@ -61,12 +60,6 @@ class Juego(object):
         texto = fuente.render("Jum the rock!! Score: "+str(self.puntaje), True, (255, 255, 255))
         self.pantalla.display.blit(texto,[800, 0])
 
-    def reproducirSonido(self):
-        pygame.mixer.music.play(-1)
-
-    def stopSonido(self):
-        pygame.mixer.music.stop()
-
     def gameOver(self):
         fuente = pygame.font.Font(None, 72)
         texto = fuente.render("Game Over!! Score: "+str(self.puntaje), True, (255, 255, 255))
@@ -76,8 +69,8 @@ class Juego(object):
         tiempo=1
         tiempoEnemigo=1
         salto = False
-        saltar=False
         reloj1 = pygame.time.Clock()
+        self.sonido.playSonido(0)
         #Bucle principal del videojuego
         while salir != True and self.actualizarPantalla()!=True:
 
@@ -105,7 +98,7 @@ class Juego(object):
                          salto = True
 
                      if salto == True:
-                         self.jugador.saltar(tiempo)
+                         self.jugador.saltar()
                          self.actualizarPantalla()
                          if self.jugador.y >= 320:
                              salto = False

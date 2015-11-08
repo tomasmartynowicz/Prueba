@@ -8,21 +8,23 @@ class Menu(object):
     def __new__ (self):
       if not self._instance:
          self._instance=super(Menu,self).__new__(self)
-         self.imagen=pygame.image.load('fondo.jpg')
-         self.pantalla=pygame.display.set_mode((1080,420))
-         self.p=[Pantalla("Jump the Rock: Menu Principal",pygame.display.set_mode((1080,420)),'fondo.jpg',0,0),Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'marte2.jpg',0,0)]
-         self.nombre="Jump the Rock: Menu Principal"
+         self.pantalla=[Pantalla("Jump the Rock: Menu Principal",pygame.display.set_mode((1080,420)),'fondo.jpg',0,0),
+                        Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'marte2.jpg',0,0),
+                        Pantalla("Game Over",pygame.display.set_mode((1080,420)),'gameover.png',0,0)]
          self.opcion_jugar=pygame.K_KP1
          self.opcion_verPuntaje=pygame.K_KP2      #singleton
          self.opcion_salir=pygame.K_KP3
-        #lista puntaje
+         self.lista_puntaje=[]
       return self._instance
 
     def mostrarMenu(self):
-        self.p[0].toPantalla()
+        self.pantalla[0].toPantalla()
 
     def mostarJuego(self):
-        self.p[1].toPantalla()
+        self.pantalla[1].toPantalla()
+
+    def mostrarGameOver(self):
+        self.pantalla[2].toPantalla()
 
 
 

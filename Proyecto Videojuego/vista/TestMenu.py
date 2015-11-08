@@ -5,6 +5,8 @@ from modelo.Sonido import Sonido
 from modelo.Juego import Juego
 from modelo.Pantalla import Pantalla
 from modelo.Menu import Menu
+from modelo.Sonido import Sonido
+from modelo.Puntaje import Puntaje
 pygame.init()
 
 
@@ -32,12 +34,14 @@ salir=False
 
 
 menu=Menu()
+sonido=Sonido()
+puntaje=Puntaje()
 
+sonido.playSonido(1)
 menu.mostrarMenu()
 #pantalla=menu.pantalla
 
 #pantalla.blit(menu.imagen,[0,0])
-
 
 #Bucle principal del videojuego
 while salir != True:
@@ -52,10 +56,16 @@ while salir != True:
          keys = pygame.key.get_pressed()
 
          if keys[pygame.K_1] or keys[menu.opcion_jugar]:
-
-            newGame=Juego(jugador,enemigo,menu.p[1],0,'dog.mp3')
+            sonido.stopSonido()
+            newGame=Juego(jugador,enemigo,menu.pantalla[1],0)
             newGame.iniciarJuego(salir,event)
-            menu.mostrarMenu()
+            sonido.stopSonido()
+            sonido.playSonido(1)
+            menu.lista_puntaje.append(newGame.puntaje)
+            menu.mostrarGameOver()
+            puntaje.valor=newGame.puntaje
+            puntaje.toPantalla(menu.pantalla[2].display)
+            #menu.mostrarMenu()
 
 
          if keys[pygame.K_2] or keys[menu.opcion_verPuntaje]:
