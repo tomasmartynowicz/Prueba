@@ -5,6 +5,7 @@ class Jugador(Personaje):                                           #Esta es la 
         def __init__(self,imagen,x,y,alias):
             Personaje.__init__(self,imagen,x,y)              #A mi me funciona sin tener que ponerla pero asi compila seguro.
             self.alias=alias
+            self.t = 1
             #self.listaAnimacion en contruccion         #Ejecuto el metodo de la clase base
 
     #Getters and Setters
@@ -48,9 +49,12 @@ class Jugador(Personaje):                                           #Esta es la 
             if self.y>320:
                 self.y=320
 
-        def saltar(self,t):
-            self.y = 320 - 55*(t) + 5 * (t)*(t)
+        def saltar(self):
+            if self.t > 10:
+                self.t=1
+            self.y = 320 - 50*(self.t) + 5 * (self.t)*(self.t)
             self.y = int(self.y)
+            self.t = self.t + 1
 
 
         def animar(self):

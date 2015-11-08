@@ -8,9 +8,9 @@ Decision:{}
 --------------------------------------------------------------------------------------------------------
 Reunion: virtual
 Integrantes:
-	Guille-Aprobado
+	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maxi-Aprobado
+	Maximiliano-Aprobado
 Fecha:02/9/2015
 Descripcion:Metodologia de trabajo
 Decision: Crear usuario en github y repositorio compartido para el proyecto.
@@ -21,9 +21,9 @@ Decision: Crear usuario en github y repositorio compartido para el proyecto.
 
 Reunion: virtual
 Integrantes:
-	Guille-Aprobado
+	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maxi-Aprobado
+	Maximiliano-Aprobado
 Fecha:14/9/2015
 Descipcion:La historia del juego 
 Decision: crear un txt con la historia del juego y su descripcion de lo que hace
@@ -33,9 +33,9 @@ Decision: crear un txt con la historia del juego y su descripcion de lo que hace
 
 Reunion: virtual
 Integrantes:
-	Guille- Aprobado
+	Guillermo- Aprobado
 	Tomas-Aprobado
-	Maxi-
+	Maximiliano-
 Fecha:14/9/2015
 Descripción: Se puso el nombre al juego " Jump the rock! "
 Decision: ponerle el nombre al juego
@@ -45,9 +45,9 @@ Decision: ponerle el nombre al juego
 
 Reunion: virtual
 Integrantes:
-	Guille-Aprobado
+	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maxi-Aprobado
+	Maximiliano-Aprobado
 Fecha:10/10/2015	
 Descripcion:Metodologia de trabajo
 Decision:Crear bitacora.txt y proyecto en kandboard, se sube al repositorio
@@ -57,9 +57,9 @@ Decision:Crear bitacora.txt y proyecto en kandboard, se sube al repositorio
 --------------------------------------------------------------------------------------------------------
 Reunion:virtual
 Integrantes:
-	Guille-Aprobado
+	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maxi-Aprobado
+	Maximiliano-Aprobado
 Fecha:10/10/2015	
 Descripcion:Aprobar ambito de desarrollo, especificacion de procesos y
 	diagrama de casos de uso
@@ -69,9 +69,9 @@ Decision: "aclarar decision en integrantes"
 --------------------------------------------------------------------------------------------------------
 Reunion:personal
 Integrantes:
-	Guille-Aprobado
+	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maxi-Aprobado
+	Maximiliano-Aprobado
 Fecha:21/10/2015	
 Descripcion:Aprobar diagrama de clases y crear proyecto videojuego
 Decision:terminamos con la etapa de diseño, empezamos con las tareas de codificacion de clases
@@ -80,9 +80,9 @@ Decision:terminamos con la etapa de diseño, empezamos con las tareas de codifica
 --------------------------------------------------------------------------------------------------------
 Reunion:virtual
 Integrantes:
-	Guille-Aprobado
+	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maxi-Aprobado
+	Maximiliano-Aprobado
 Fecha:21/10/2015	
 Descripcion:el Diagrama de clases se encuentra en Disen~o y esta en formato pdf
 Decision:Aprobar diagrama de clases version final
@@ -91,9 +91,9 @@ Decision:Aprobar diagrama de clases version final
 --------------------------------------------------------------------------------------------------------
 Reunion:virtual
 Integrantes:
-	Guille-Aprobado
+	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maxi-Aprobado
+	Maximiliano-Aprobado
 Fecha:03/11/2015	
 Descripcion:creacion del proyecto
 Decision:se crea el proyecto, se crean dos carpetas modelo, vista.
@@ -104,13 +104,29 @@ Decision:se crea el proyecto, se crean dos carpetas modelo, vista.
 --------------------------------------------------------------------------------------------------------
 Reunion:personal
 Integrantes:
-	Guille-
+	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maxi-Aprobado
+	Maximiliano-Aprobado
 Fecha:04/11/2015	
 Descripcion:codificacion de clases y pruebas
 Decision:se detectaron nuevos escenarios para resolver de las clases, por ejemplo que el perro tarde
 	menos tiempo en caer, pantalla tenga una lista de imaganes, transparencia de los personajes
 	modificar el metodo de actualizar pantallas para que reciba la lista de imagenes. Unificar la lista
 	de imagenes a resolucion 1080*420pixels.
+--------------------------------------------------------------------------------------------------------
+**************************************************************************************
+--------------------------------------------------------------------------------------------------------
+Reunion:virtual
+Integrantes:
+	Guillermo-Aprobado
+	Tomas-Aprobado
+	Maximiliano-
+Fecha:07/11/2015
+Descripcion:cambio de fondo del menu
+Decision:se cambio el fondo del menu principal y se definieron que teclas hay que 
+presionar para iniciar el juego, para ver el puntaje o salir.
+
+
+
+
 
