@@ -89,26 +89,22 @@ class Juego(object):
 
                 for event in pygame.event.get():
 
-
-                     keys = pygame.key.get_pressed()
-
-
-                     if keys[pygame.K_SPACE] and salto == False:
-                         tiempo = 1
-                         salto = True
-
-                     if salto == True:
-                         self.jugador.saltar()
-                         self.actualizarPantalla()
-                         if self.jugador.y >= 320:
-                             salto = False
-                         tiempo = tiempo + 1
+                                 keys = pygame.key.get_pressed()
 
 
-                     if event.type == pygame.QUIT:
-                             salir = True
+                                 if keys[pygame.K_SPACE]:
+                                    salto=True
 
 
+                                 if salto==True:
+                                    self.jugador.saltar(tiempo)
+                                    tiempo=self.jugador.saltar(tiempo)
+                                    if self.jugador.y==320:
+                                        salto=False
+                                        tiempo=1
+
+                                 if event.type == pygame.QUIT:
+                                         salir = True
                 pygame.event.post(event)
                 reloj1.tick(30)
                 pygame.display.update()

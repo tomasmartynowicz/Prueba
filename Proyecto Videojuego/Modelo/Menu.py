@@ -11,7 +11,9 @@ class Menu(object):
          self.pantalla=[Pantalla("Jump the Rock: Menu Principal",pygame.display.set_mode((1080,420)),'fondo.jpg',0,0),
                         Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'marte2.jpg',0,0),
                         Pantalla("Game Over",pygame.display.set_mode((1080,420)),'gameover.png',0,0),
-                        Pantalla("Puntajes",pygame.display.set_mode((1080,420)),'pinkfloyd.png',0,0)]
+                        Pantalla("Puntajes",pygame.display.set_mode((1080,420)),'pinkfloyd.png',0,0),
+                        Pantalla("Como Jugar",pygame.display.set_mode((1080,420)),'intruc.jpg',0,0)]
+         self.opcion_instrucciones=pygame.K_KP0
          self.opcion_jugar=pygame.K_KP1
          self.opcion_verPuntaje=pygame.K_KP2      #singleton
          self.opcion_salir=pygame.K_KP3
@@ -30,5 +32,8 @@ class Menu(object):
 
     def PantallaPuntaje(self):
         self.pantalla[3].toPantalla()
+
+    def mostrarInstrucciones(self):
+        self.pantalla[4].toPantalla()
 
 

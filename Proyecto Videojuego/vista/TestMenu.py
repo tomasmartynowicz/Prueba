@@ -55,6 +55,9 @@ while salir != True:
 
          keys = pygame.key.get_pressed()
 
+         if keys[pygame.K_0] or keys[menu.opcion_instrucciones]:
+            menu.mostrarInstrucciones()
+
          if keys[pygame.K_1] or keys[menu.opcion_jugar]:
             sonido.stopSonido()
             newGame=Juego(jugador,enemigo,menu.pantalla[1],0)

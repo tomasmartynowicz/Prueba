@@ -34,36 +34,13 @@ class Jugador(Personaje):                                           #Esta es la 
 
     #metodos
 
-
-
-        def subir(self):
-            if self.y>=100:
-                self.y=self.y-70
-            if self.y<=100:
-                self.y=100
-                self.bajar()
-
-        def bajar(self):
-            if self.y>=100:
-                self.y=self.y+70
-            if self.y>320:
-                self.y=320
-
-        def saltar(self):
+        def saltar(self,t):
             if self.t > 10:
                 self.t=1
             self.y = 320 - 50*(self.t) + 5 * (self.t)*(self.t)
             self.y = int(self.y)
             self.t = self.t + 1
-
-        #metodo sobrecargado
-      #  def saltar(self,t):
-       #     if self.t > 10:
-        #        self.t=1
-         #   self.y = 320 - 50*(self.t) + 5 * (self.t)*(self.t)
-         #   self.y = int(self.y)
-          #  self.t = self.t + 1
-           # return t
+            return t
 
         def animar(self):
             print 'en contruccion'
