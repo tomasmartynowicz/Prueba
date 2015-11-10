@@ -3,7 +3,7 @@ from modelo.Enemigo import Enemigo
 import pygame
 
 class Pantalla(object):
-    def __init__(self,nombre,display,imagen,x,y,resolucion):
+    def __init__(self,nombre,display,imagen,x,y,resolucion,piso = None):
         self.nombre=pygame.display.set_caption(nombre)
         self.display=display
         self.resolucion=resolucion
@@ -11,6 +11,13 @@ class Pantalla(object):
         self.fondo=pygame.image.load(imagen)                                    #Carga solo 1 imagen
         self.x=[x,x+resolucion]
         self.y=y
+        self.dir_piso=piso                                                      #Atributos del piso
+        if piso != None:
+            self.piso=pygame.image.load(self.dir_piso)
+            self.x_piso=[x,x+resolucion]
+            self.x_init=[x,x+resolucion]
+            self.y_piso=362
+            self.t=1
 
     #Setters
     def setNombre(self, nombre):
@@ -29,9 +36,14 @@ class Pantalla(object):
             self.y=y
     #toPantalla()
     def toPantalla(self):  #tipo el toString()
-         self.display.blit(self.fondo,[self.x[0], self.y]) #imprime en pantalla los 2 fondos
-         fondoCopy=self.fondo.copy()                        #Copia el fondo a otra superficie
+         fondoCopy=self.fondo.copy()                        #imprime en pantalla los 2 fondos
+         self.display.blit(self.fondo,[self.x[0], self.y])  #Copia el fondo a otra superficie
          self.display.blit(fondoCopy,[self.x[1],self.y])    #y imprime el fondo con las coordenadas correspondientes
+         if self.dir_piso != None:
+            pisoCopy=self.piso.copy()
+            self.display.blit(self.piso,[self.x_piso[0],self.y_piso])
+            self.display.blit(pisoCopy,[self.x_piso[1],self.y_piso])
+
 
 
     #metodos
@@ -43,6 +55,17 @@ class Pantalla(object):
         else:
             self.x[pos]=self.x[pos]-2 #es 2
             self.y=0
+
+    def moverPiso(self,pos):                        #Nuevo metodo para mover el piso
+        if self.x_piso[pos]<=-self.resolucion:
+            self.x_piso[pos]=self.resolucion
+            self.x_init[pos]=self.resolucion
+            if pos == 0:
+                self.x_init[1]=0
+            else:
+                self.x_init[0]=0
+        else:
+            self.x_piso[pos]=self.x_piso[pos] - 16
 
 
     def detenerPantalla(self):
