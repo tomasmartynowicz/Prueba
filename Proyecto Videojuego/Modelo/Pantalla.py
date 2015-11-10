@@ -53,6 +53,57 @@ class Pantalla(object):                                             #El parametr
         enemigo.toPantalla(self.display)
         self.display.blit(texto,[0, 0])#imprime puntaje
 
+    def setEscribir(self,keys,event,cadena):
+
+        f1 = pygame.font.Font(None, 100)
+        reloj1 = pygame.time.Clock()
+        escribio=False
+        pos_x=0
+        c=0
+        while escribio!=True:
+
+             for event in pygame.event.get():
+
+                     keys = pygame.key.get_pressed()
+
+                     if event.type == pygame.QUIT:
+                               escribio = True
+                     if pygame.key.get_focused() and keys[pygame.K_KP_ENTER]!=True and keys[pygame.K_NUMLOCK]!=True :
+
+                         for i in xrange(0,len(keys)):
+                           name=pygame.key.name(i)
+                           if keys[i]==1 and c<=len(cadena):
+                                      cadena=cadena+str(name)
+                                      text=f1.render(cadena,True,(255,255,255))
+                                      self.display.blit(text,(pos_x+10,100))
+                                      c=c+1
+                                      pygame.event.post(event)
+
+             pygame.event.post(event)
+             reloj1.tick(30)
+             pygame.display.update()
+
+        return cadena
+
+
+    def mostrarEscribir(self, cadena):
+        f2 = pygame.font.Font(None,300)
+        text=f2.render(cadena,True,(255,255,255))
+        self.display.blit(text,(0,100))
+        pygame.display.update()
+
+    def cadenaVacia(self, cadena):
+        respuesta=False
+        for i in xrange(0,len(cadena)):
+            if cadena[i]=="":
+               respuesta=True
+        return respuesta
+
+
+
+
+
+
 
 
 
