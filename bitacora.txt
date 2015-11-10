@@ -35,7 +35,7 @@ Reunion: virtual
 Integrantes:
 	Guillermo- Aprobado
 	Tomas-Aprobado
-	Maximiliano-
+	Maximiliano-Aprobado	
 Fecha:14/9/2015
 Descripción: Se puso el nombre al juego " Jump the rock! "
 Decision: ponerle el nombre al juego
@@ -120,12 +120,22 @@ Reunion:virtual
 Integrantes:
 	Guillermo-Aprobado
 	Tomas-Aprobado
-	Maximiliano-
+	Maximiliano-Aprobado
 Fecha:07/11/2015
 Descripcion:cambio de fondo del menu
 Decision:se cambio el fondo del menu principal y se definieron que teclas hay que 
 presionar para iniciar el juego, para ver el puntaje o salir.
-
+--------------------------------------------------------------------------------------------------------
+**************************************************************************************
+--------------------------------------------------------------------------------------------------------
+Reunion:virtual
+Integrantes:
+	Guillermo-Aprobado
+	Tomas-Aprobado
+	Maximiliano-Aprobado
+Fecha:10/11/2015
+Descripcion:Integracion final.(primer entrega)
+Decision:Se integra el repositorio junto con una serie de documentacion aprobada por mail
 
 
 
