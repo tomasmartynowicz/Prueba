@@ -64,6 +64,7 @@ class Juego(object):
     def iniciarJuego(self,salir,event):
         tiempoEnemigo=1
         salto = False
+        escribio=False
         reloj1 = pygame.time.Clock()
         self.sonido.playSonido(0)
         #Bucle principal del videojuego
@@ -102,6 +103,22 @@ class Juego(object):
                 reloj1.tick(30)
                 pygame.display.update()
 
+        while escribio!=True:
+
+            for event in pygame.event.get():
+
+                self.pantalla.toPantalla()
+                self.pantalla.mensajeIngrese()
+                self.pantalla.mostrarCadena(self.jugador.alias)
+
+                keys = pygame.key.get_pressed()
+
+                if keys[pygame.K_ESCAPE]:
+                    escribio=True
+                if escribio!=True:
+                    self.jugador.alias=self.pantalla.setEscribir(keys,event,self.jugador.alias)
+
+            pygame.event.post(event)
 
 
 

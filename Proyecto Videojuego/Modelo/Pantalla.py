@@ -63,35 +63,68 @@ class Pantalla(object):
         f1 = pygame.font.Font(None, 100)
         reloj1 = pygame.time.Clock()
         escribio=False
+        caracter=False
         pos_x=0
-        c=0
-        while escribio!=True:
+        caraceterValido=""
 
-             for event in pygame.event.get():
 
-                     keys = pygame.key.get_pressed()
+        while escribio!=True and caracter!=True: #mientras dejo de escribir y de escribir carcateres
 
-                     if event.type == pygame.QUIT:
-                               escribio = True
-                     if pygame.key.get_focused() and keys[pygame.K_KP_ENTER]!=True and keys[pygame.K_NUMLOCK]!=True :
+                 for event in pygame.event.get():
 
-                         for i in xrange(0,len(keys)):
-                           name=pygame.key.name(i)
-                           if keys[i]==1 and c<=len(cadena):
-                                      cadena=cadena+str(name)
-                                      text=f1.render(cadena,True,(255,255,255))
-                                      self.display.blit(text,(pos_x+10,100))
-                                      c=c+1
-                                      pygame.event.post(event)
+                         if event.type == pygame.QUIT:
+                                caracter=True
+                                escribio = True
 
-             pygame.event.post(event)
-             reloj1.tick(30)
-             pygame.display.update()
+
+                         keys = pygame.key.get_pressed()
+
+                         if keys[pygame.K_ESCAPE]:
+                                   carcater=True
+                                   escribio=True
+                         else:
+                                   caracter=False
+
+
+
+                         if keys[pygame.K_NUMLOCK]!=True:
+
+                             if pygame.key.get_focused() and escribio!=True and caracter!=True:
+
+                                 for i in xrange(0,len(keys)):
+
+                                   name=pygame.key.name(i)
+
+                                   if keys[i]==1 and caracter!=True:
+                                              caracter=True
+                                              caraceterValido=name
+                                              cadena=cadena+caraceterValido
+                                              keys = pygame.key.get_pressed()
+                         else:
+                               text=f1.render("Desconecta  Bloq Num del teclado Numerico",True,(250,250,250))
+                               self.display.blit(text,(0,50))
+
+
+                 if caracter==True:
+                    text=f1.render(cadena,True,(250,250,250))
+                    self.display.blit(text,(pos_x+10,100))
+                    pos_x=pos_x+50
+
+
+
+
+
+                 pygame.event.post(event)
+                 reloj1.tick(30)
+                 pygame.display.update()
+
+
+
 
         return cadena
 
 
-    def mostrarEscribir(self, cadena):
+    def mostrarCadena(self, cadena):
         f2 = pygame.font.Font(None,300)
         text=f2.render(cadena,True,(255,255,255))
         self.display.blit(text,(0,100))
@@ -103,6 +136,11 @@ class Pantalla(object):
             if cadena[i]=="":
                respuesta=True
         return respuesta
+
+    def mensajeIngrese(self):
+        fuente = pygame.font.Font(None, 50)
+        texto = fuente.render("Ingrese Su Nombre: [Esc. para finalizar]", True, (255, 255, 255))
+        self.display.blit(texto,[0, 0])#imprime
 
 
 

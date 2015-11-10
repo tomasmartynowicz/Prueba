@@ -20,7 +20,7 @@ salto = False
 tiempo=1
 tiempoEnemigo=1
 salir=False
-
+escribio=False
 
 
 menu=Menu()
@@ -33,7 +33,7 @@ menu.mostrarMenu()
 #Bucle principal
 while salir != True:
 
-     jugador=Jugador('Perro4.png',0,320,"jugador1")
+     jugador=Jugador('Perro4.png',0,320,"")
      enemigo=Enemigo('rock.png',1000,320)
 
 
@@ -51,10 +51,12 @@ while salir != True:
             newGame.iniciarJuego(salir,event)
             sonido.stopSonido()
             sonido.playSonido(1)
-            menu.lista_puntaje.append(newGame.puntaje)
             menu.mostrarGameOver()
             puntaje.valor=newGame.puntaje
             puntaje.toPantalla(menu.pantalla[2].display)
+
+            menu.lista_puntaje.append(str(newGame.puntaje)+" "+str(newGame.jugador.alias))
+
 
 
          if keys[pygame.K_2] or keys[menu.opcion_verPuntaje]:
