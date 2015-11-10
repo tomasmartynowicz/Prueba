@@ -8,7 +8,7 @@ class Pantalla(object):
         self.display=display
         self.resolucion=resolucion
         self.imagen=imagen                                                      #self.imagen guarda la direccion del fondo
-        self.fondo=pygame.image.load(imagen)                                    #Carga solo 1 imagen
+        self.fondo=pygame.image.load(imagen).convert()                                    #Carga solo 1 imagen
         self.x=[x,x+resolucion]
         self.y=y
         self.dir_piso=piso                                                      #Atributos del piso
@@ -27,7 +27,7 @@ class Pantalla(object):
             self.display=pygame.display.set_mode((x,y))
 
     def setImagen(self):
-            self.fondo=pygame.image.load(self.imagen)
+            self.fondo=pygame.image.load(self.imagen).convert()
 
     def setX(self, x):
             self.x=x
