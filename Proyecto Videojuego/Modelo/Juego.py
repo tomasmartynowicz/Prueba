@@ -55,11 +55,6 @@ class Juego(object):
             respuesta=True
         return respuesta
 
-    def mostrarPuntaje(self):
-        fuente = pygame.font.Font(None, 25)
-        texto = fuente.render("Jum the rock!! Score: "+str(self.puntaje), True, (255, 255, 255))
-        self.pantalla.display.blit(texto,[800, 0])
-
     def gameOver(self):
         fuente = pygame.font.Font(None, 72)
         texto = fuente.render("Game Over!! Score: "+str(self.puntaje), True, (255, 255, 255))
@@ -77,7 +72,6 @@ class Juego(object):
                 self.pantalla.moverPantalla()
                 self.enemigo.desplazarIzquierda2(tiempoEnemigo)
                 tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
-
 
                  #Cambia enemigo segun puntaje
 
