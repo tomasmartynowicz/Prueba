@@ -49,6 +49,7 @@ class Juego(object):
             respuesta=True
         return respuesta
 
+
     def saltoRoca(self):
         respuesta=False
         if self.jugador.y<300 and self.jugador.x==self.enemigo.x:
@@ -61,7 +62,6 @@ class Juego(object):
         self.pantalla.display.blit(texto,[0, 0])
 
     def iniciarJuego(self,salir,event):
-        tiempo=1
         tiempoEnemigo=1
         salto = False
         reloj1 = pygame.time.Clock()
@@ -69,7 +69,8 @@ class Juego(object):
         #Bucle principal del videojuego
         while salir != True and self.actualizarPantalla()!=True:
 
-                self.pantalla.moverPantalla()
+                self.pantalla.moverPantalla(0)
+                self.pantalla.moverPantalla(1)
                 self.enemigo.desplazarIzquierda2(tiempoEnemigo)
                 tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
 
@@ -91,11 +92,9 @@ class Juego(object):
 
 
                                  if salto==True:
-                                    self.jugador.saltar(tiempo)
-                                    tiempo=self.jugador.saltar(tiempo)
+                                    self.jugador.saltar()
                                     if self.jugador.y==320:
                                         salto=False
-                                        tiempo=1
 
                                  if event.type == pygame.QUIT:
                                          salir = True

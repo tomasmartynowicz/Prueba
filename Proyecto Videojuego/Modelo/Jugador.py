@@ -34,13 +34,12 @@ class Jugador(Personaje):                                           #Esta es la 
 
     #metodos
 
-        def saltar(self,t):
+        def saltar(self):
             if self.t > 10:
                 self.t=1
             self.y = 320 - 50*(self.t) + 5 * (self.t)*(self.t)
             self.y = int(self.y)
             self.t = self.t + 1
-            return t
 
         def animar(self):
             print 'en contruccion'
