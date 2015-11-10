@@ -72,6 +72,8 @@ class Juego(object):
 
                 self.pantalla.moverPantalla(0)
                 self.pantalla.moverPantalla(1)
+                self.pantalla.moverPiso(0)
+                self.pantalla.moverPiso(1)
                 self.enemigo.desplazarIzquierda2(tiempoEnemigo)
                 tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
 

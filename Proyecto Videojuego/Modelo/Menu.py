@@ -9,7 +9,7 @@ class Menu(object):
       if not self._instance:
          self._instance=super(Menu,self).__new__(self)
          self.pantalla=[Pantalla("Jump the Rock: Menu Principal",pygame.display.set_mode((1080,420)),'fondo.jpg',0,0,1080),
-                        Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'fondo6.png',0,0,1080),
+                        Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'fondo6.png',0,0,1080,'piso.png'),
                         Pantalla("Game Over",pygame.display.set_mode((1080,420)),'gameover.png',0,0,1080),
                         Pantalla("Puntajes",pygame.display.set_mode((1080,420)),'pinkfloyd.png',0,0,1080),
                         Pantalla("Como Jugar",pygame.display.set_mode((1080,420)),'intruc.jpg',0,0,1080)]

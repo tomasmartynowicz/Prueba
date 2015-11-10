@@ -7,7 +7,7 @@ class Enemigo(Personaje):                                           #Esta es la 
 
     #Getters and Setters
         def setImagen(self, imagen):
-            self.imagen=pygame.image.load(imagen)
+            self.imagen=pygame.image.load(imagen).convert_alpha()
 
         def setX(self, x):
             self.x=x
@@ -21,11 +21,11 @@ class Enemigo(Personaje):                                           #Esta es la 
 
 
         def desplazarIzquierda(self):
-            if self.x<-16:
+            if self.x<-86:
                 self.x=1000
                 self.y=320
             else:
-               self.x=self.x-10
+               self.x=self.x-15
                self.y=320
 
         def desplazarIzquierdaRapido(self):
