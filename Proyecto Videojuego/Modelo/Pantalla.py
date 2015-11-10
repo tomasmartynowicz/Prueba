@@ -8,8 +8,7 @@ class Pantalla(object):
         self.display=display
         self.resolucion=resolucion
         self.imagen=imagen                                                      #imagen guarda la direccion del fondo
-        self.fondo1=pygame.image.load(imagen)                                   #Cargo la imagen a 2 fondos diferentes
-        self.fondo2=pygame.image.load(imagen)
+        self.fondo=pygame.image.load(imagen)                                   #Cargo la imagen a 2 fondos diferentes
         self.x=[x,x+resolucion]
         self.y=y
 
@@ -21,8 +20,7 @@ class Pantalla(object):
             self.display=pygame.display.set_mode((x,y))
 
     def setImagen(self):
-            self.fondo1=pygame.image.load(self.imagen)
-            self.fondo2=pygame.image.load(self.imagen)
+            self.fondo=pygame.image.load(self.imagen)
 
     def setX(self, x):
             self.x=x
@@ -31,8 +29,9 @@ class Pantalla(object):
             self.y=y
     #toPantalla()
     def toPantalla(self):  #tipo el toString()
-         self.display.blit(self.fondo1,[self.x[0], self.y]) #imprime en pantalla los 2 fondos
-         self.display.blit(self.fondo2,[self.x[1],self.y])
+         self.display.blit(self.fondo,[self.x[0], self.y]) #imprime en pantalla los 2 fondos
+         fondoCopy=self.fondo.copy()
+         self.display.blit(fondoCopy,[self.x[1],self.y])
 
 
     #metodos
