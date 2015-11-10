@@ -49,6 +49,7 @@ class Juego(object):
             respuesta=True
         return respuesta
 
+
     def saltoRoca(self):
         respuesta=False
         if self.jugador.y<300 and self.jugador.x==self.enemigo.x:
@@ -68,7 +69,8 @@ class Juego(object):
         #Bucle principal del videojuego
         while salir != True and self.actualizarPantalla()!=True:
 
-                self.pantalla.moverPantalla()
+                self.pantalla.moverPantalla(0)
+                self.pantalla.moverPantalla(1)
                 self.enemigo.desplazarIzquierda2(tiempoEnemigo)
                 tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
 
