@@ -83,7 +83,39 @@ class Juego(object):
                     self.enemigo.setImagen('rock2.png')
 
                 if self.puntaje>=1000 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock4.png')
+                    self.pantalla.imagen='F_TheWall.png'
+                    self.pantalla.setImagen()
+
+                if self.puntaje>=1500 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock5.png')
+
+
+                if self.puntaje>=2000 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock2.png')
+                    self.pantalla.imagen='noche.png'
+                    self.pantalla.setImagen()
+
+                if self.puntaje>=2500 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock.png')
+
+                if self.puntaje>=3000 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock4.png')
+                    self.pantalla.imagen='f_Martillo.jpg'
+                    self.pantalla.setImagen()
+
+                if self.puntaje>=3500 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock5.png')
+
+
+                if self.puntaje>=4000 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock2.png')
+                    self.pantalla.imagen='f_puntaje.png'
+                    self.pantalla.setImagen()
+
+                if self.puntaje>=4500 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock.png')
+
 
                 for event in pygame.event.get():
 

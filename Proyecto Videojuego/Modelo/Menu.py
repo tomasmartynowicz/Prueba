@@ -11,7 +11,7 @@ class Menu(object):
          self.pantalla=[Pantalla("Jump the Rock: Menu Principal",pygame.display.set_mode((1080,420)),'fondo.jpg',0,0,1080),
                         Pantalla("Jump the Rock",pygame.display.set_mode((1080,420)),'fondo6.png',0,0,1080,'piso.png'),
                         Pantalla("Game Over",pygame.display.set_mode((1080,420)),'gameover.png',0,0,1080),
-                        Pantalla("Puntajes",pygame.display.set_mode((1080,420)),'pinkfloyd.png',0,0,1080),
+                        Pantalla("Puntajes",pygame.display.set_mode((1080,420)),'f_puntaje.png',0,0,1080),
                         Pantalla("Como Jugar",pygame.display.set_mode((1080,420)),'intruc.jpg',0,0,1080)]
          self.opcion_instrucciones=pygame.K_KP0
          self.opcion_jugar=pygame.K_KP1
