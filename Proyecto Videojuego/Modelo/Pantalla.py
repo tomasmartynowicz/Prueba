@@ -188,6 +188,7 @@ class Pantalla(object):
       if keys[pygame.K_l]:respuesta=True
       if keys[pygame.K_m]:respuesta=True
       if keys[pygame.K_n]:respuesta=True
+      if keys[pygame.K_o]:respuesta=True
       if keys[pygame.K_p]:respuesta=True
       if keys[pygame.K_q]:respuesta=True
       if keys[pygame.K_r]:respuesta=True
