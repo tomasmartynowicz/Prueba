@@ -153,6 +153,7 @@ class Juego(object):
                     self.jugador.alias=self.pantalla.setEscribir(keys,event,self.jugador.alias)
 
             pygame.event.post(event)
+        self.pantalla.imagen='fondo6.jpg'
 
 
 

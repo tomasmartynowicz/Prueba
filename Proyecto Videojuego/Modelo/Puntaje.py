@@ -20,10 +20,10 @@ class Puntaje(object):
 
     def toListaPuntaje(self,display,lista_puntaje):
          x=10
-         text=self.fuente.render("Lista de puntajes: ", True, (255, 255, 255))
-         display.blit(text,[300, 50])
+         text=self.fuente.render("Lista de puntajes: SCORE - ALIAS", True, (255, 255, 255))
+         display.blit(text,[100, 50])
 
          for member in lista_puntaje:
-            text=self.fuente.render("Score= "+str(member), True, (255, 255, 255))
+            text=self.fuente.render("            "+str(member), True, (255, 255, 255))
             display.blit(text,[300, 100+x])
             x=x+30
