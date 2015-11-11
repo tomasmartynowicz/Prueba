@@ -85,7 +85,9 @@ class Juego(object):
                 if self.puntaje>=1000 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock4.png')
                     self.pantalla.imagen='F_TheWall.png'
+                    self.pantalla.piso='piso2.png'
                     self.pantalla.setImagen()
+                    self.pantalla.setPiso()
 
                 if self.puntaje>=1500 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock5.png')
