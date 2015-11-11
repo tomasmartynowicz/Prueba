@@ -67,6 +67,10 @@ class Juego(object):
         escribio=False
         reloj1 = pygame.time.Clock()
         self.sonido.playSonido(0)
+        self.pantalla.imagen='fondo6.png'
+        self.pantalla.setImagen()
+        self.pantalla.piso='piso.png'
+        self.pantalla.setPiso()
         #Bucle principal del videojuego
         while salir != True and self.actualizarPantalla()!=True:
 
@@ -82,7 +86,7 @@ class Juego(object):
                 if self.puntaje>=500 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock2.png')
 
-                if self.puntaje>=1000 and tiempoEnemigo==1:
+                if self.puntaje>=1000 and self.puntaje<1200 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock4.png')
                     self.pantalla.imagen='F_TheWall.png'
                     self.pantalla.piso='piso2.png'
@@ -93,7 +97,7 @@ class Juego(object):
                     self.enemigo.setImagen('rock5.png')
 
 
-                if self.puntaje>=2000 and tiempoEnemigo==1:
+                if self.puntaje>=2000 and self.puntaje<2200 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock2.png')
                     self.pantalla.imagen='noche.png'
                     self.pantalla.setImagen()
@@ -101,7 +105,7 @@ class Juego(object):
                 if self.puntaje>=2500 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock.png')
 
-                if self.puntaje>=3000 and tiempoEnemigo==1:
+                if self.puntaje>=3000 and self.puntaje<3200 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock4.png')
                     self.pantalla.imagen='f_Martillo.jpg'
                     self.pantalla.setImagen()
@@ -110,13 +114,23 @@ class Juego(object):
                     self.enemigo.setImagen('rock5.png')
 
 
-                if self.puntaje>=4000 and tiempoEnemigo==1:
+                if self.puntaje>=4000 and self.puntaje<4200 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock2.png')
-                    self.pantalla.imagen='f_puntaje.png'
+                    self.sonido.stopSonido
+                    self.pantalla.imagen='marte2.jpg'
                     self.pantalla.setImagen()
 
                 if self.puntaje>=4500 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock5.png')
+
+                if self.puntaje>=5000 and self.puntaje<5200 and tiempoEnemigo==1:
+                    self.enemigo.setImagen('rock4.png')
+                    self.pantalla.imagen='pinkfloyd2.png'
+                    self.pantalla.setImagen()
+
+                if self.puntaje>=5500 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock.png')
+
 
 
                 for event in pygame.event.get():
