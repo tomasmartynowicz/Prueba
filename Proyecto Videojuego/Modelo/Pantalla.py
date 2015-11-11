@@ -122,11 +122,11 @@ class Pantalla(object):
 
                                    name=pygame.key.name(i)
 
-                                   if keys[i]==1 and caracter!=True:
+                                   if keys[i]==1 and caracter!=True and self.esLetra(keys):
                                               caracter=True
                                               caraceterValido=name
-                                              cadena=cadena+caraceterValido
-                                              keys = pygame.key.get_pressed()
+                                 cadena=cadena+caraceterValido
+                                 #keys = pygame.key.get_pressed()
                          else:
                                text=f1.render("Desconecta  Bloq Num del teclado Numerico",True,(250,250,250))
                                self.display.blit(text,(0,50))
@@ -171,8 +171,35 @@ class Pantalla(object):
 
 
 
-
-
+    def esLetra(self, letra):
+      keys=letra
+      respuesta=False
+      if keys[pygame.K_a]:respuesta=True
+      if keys[pygame.K_b]:respuesta=True
+      if keys[pygame.K_c]:respuesta=True
+      if keys[pygame.K_d]:respuesta=True
+      if keys[pygame.K_e]:respuesta=True
+      if keys[pygame.K_f]:respuesta=True
+      if keys[pygame.K_g]:respuesta=True
+      if keys[pygame.K_h]:respuesta=True
+      if keys[pygame.K_i]:respuesta=True
+      if keys[pygame.K_j]:respuesta=True
+      if keys[pygame.K_k]:respuesta=True
+      if keys[pygame.K_l]:respuesta=True
+      if keys[pygame.K_m]:respuesta=True
+      if keys[pygame.K_n]:respuesta=True
+      if keys[pygame.K_p]:respuesta=True
+      if keys[pygame.K_q]:respuesta=True
+      if keys[pygame.K_r]:respuesta=True
+      if keys[pygame.K_s]:respuesta=True
+      if keys[pygame.K_t]:respuesta=True
+      if keys[pygame.K_u]:respuesta=True
+      if keys[pygame.K_v]:respuesta=True
+      if keys[pygame.K_w]:respuesta=True
+      if keys[pygame.K_x]:respuesta=True
+      if keys[pygame.K_y]:respuesta=True
+      if keys[pygame.K_z]:respuesta=True
+      return respuesta
 
 
 
