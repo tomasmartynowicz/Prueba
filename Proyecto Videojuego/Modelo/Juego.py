@@ -78,8 +78,17 @@ class Juego(object):
                 self.pantalla.moverPantalla(1)
                 self.pantalla.moverPiso(0)
                 self.pantalla.moverPiso(1)
-                self.enemigo.desplazarIzquierda2(tiempoEnemigo)
-                tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
+
+                #desplazar mas rapido los enemigos en funcion del tiempo
+                if self.puntaje<5000:
+                    self.enemigo.desplazarIzquierda2(tiempoEnemigo)
+                    tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
+
+                if self.puntaje>5000 and self.puntaje<10000:
+                    self.enemigo.desplazarIzquierda2(tiempoEnemigo)
+                    tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
+
+
 
                  #Cambia enemigo segun puntaje
 

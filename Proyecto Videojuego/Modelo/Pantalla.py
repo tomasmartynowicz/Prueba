@@ -93,6 +93,7 @@ class Pantalla(object):
         caracter=False
         pos_x=0
         caraceterValido=""
+        inicioCadena=0
 
 
         while escribio!=True and caracter!=True: #mientras dejo de escribir y de escribir carcateres
@@ -104,7 +105,7 @@ class Pantalla(object):
                                 escribio = True
 
 
-                         keys = pygame.key.get_pressed()
+                         #keys = pygame.key.get_pressed()
 
                          if keys[pygame.K_ESCAPE]:
                                    carcater=True
@@ -125,21 +126,27 @@ class Pantalla(object):
                                    if keys[i]==1 and caracter!=True and self.esLetra(keys):
                                               caracter=True
                                               caraceterValido=name
-                                 cadena=cadena+caraceterValido
+                                              inicioCadena=inicioCadena+1
                                  #keys = pygame.key.get_pressed()
                          else:
                                text=f1.render("Desconecta  Bloq Num del teclado Numerico",True,(250,250,250))
                                self.display.blit(text,(0,50))
 
 
-                 if caracter==True:
-                    text=f1.render(cadena,True,(250,250,250))
-                    self.display.blit(text,(pos_x+10,100))
-                    pos_x=pos_x+50
+                 keys = pygame.key.get_pressed()
+
+                 if keys[pygame.K_SPACE]:
+                    cadena=cadena[:inicioCadena-1]
+                    caracter=True
+
+                 if caracter:
+                    cadena=cadena+caraceterValido
 
 
-
-
+                # if caracter==True:
+                 #  text=f1.render(cadena,True,(250,250,250))
+                  #  self.display.blit(text,(pos_x+600,100))
+                   # pos_x=pos_x+50
 
                  pygame.event.post(event)
                  reloj1.tick(30)
@@ -147,13 +154,13 @@ class Pantalla(object):
 
 
 
-
+        inicioCadena=0
         return cadena
 
 
     def mostrarCadena(self, cadena):
-        f2 = pygame.font.Font(None,300)
-        text=f2.render(cadena,True,(255,255,255))
+        f2 = pygame.font.Font(None,80)
+        text=f2.render("Ingrese Su Nombre:"+cadena,True,(255,255,255))
         self.display.blit(text,(0,100))
         pygame.display.update()
 
@@ -166,7 +173,7 @@ class Pantalla(object):
 
     def mensajeIngrese(self):
         fuente = pygame.font.Font(None, 50)
-        texto = fuente.render("Ingrese Su Nombre: [Esc. para finalizar]", True, (255, 255, 255))
+        texto = fuente.render("[Presione tecla (Esc.) para finalizar, (Espacio) para borrar]", True, (255, 255, 255))
         self.display.blit(texto,[0, 0])#imprime
 
 
@@ -188,6 +195,7 @@ class Pantalla(object):
       if keys[pygame.K_l]:respuesta=True
       if keys[pygame.K_m]:respuesta=True
       if keys[pygame.K_n]:respuesta=True
+      if keys[pygame.K_o]:respuesta=True
       if keys[pygame.K_p]:respuesta=True
       if keys[pygame.K_q]:respuesta=True
       if keys[pygame.K_r]:respuesta=True
