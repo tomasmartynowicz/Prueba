@@ -10,7 +10,6 @@ from modelo.Puntaje import Puntaje
 pygame.init()
 
 
-
 reloj1 = pygame.time.Clock()
 
 

@@ -12,7 +12,8 @@ class Juego(object):
         self.pantalla=pantalla
         self.puntaje=puntaje
         self.sonido=Sonido()
-
+        self.enemigo2=Enemigo('rock.png',1000,320)
+        self.enemigo3=Enemigo('rock4.png',1000,320)
  #Getter and Setter
     def setJugador(self, jugador):
         self.jugador=jugador
@@ -47,6 +48,14 @@ class Juego(object):
         respuesta=False
         if self.jugador.x==self.enemigo.x and self.jugador.y==self.enemigo.y:
             respuesta=True
+
+        if self.jugador.x==self.enemigo2.x and self.jugador.y==self.enemigo2.y:
+            respuesta=True
+
+        if self.jugador.x==self.enemigo3.x and self.jugador.y==self.enemigo3.y:
+            respuesta=True
+
+
         return respuesta
 
 
@@ -54,6 +63,10 @@ class Juego(object):
         respuesta=False
         if self.jugador.y<300 and self.jugador.x==self.enemigo.x:
             respuesta=True
+
+        if self.jugador.y<300 and self.jugador.x==self.enemigo2.x:
+            respuesta=True
+
         return respuesta
 
     def gameOver(self):
@@ -63,6 +76,8 @@ class Juego(object):
 
     def iniciarJuego(self,salir,event):
         tiempoEnemigo=1
+        tiempoEnemigo2=1
+        tiempoEnemigo3=30
         salto = False
         escribio=False
         reloj1 = pygame.time.Clock()
@@ -80,14 +95,38 @@ class Juego(object):
                 self.pantalla.moverPiso(1)
 
                 #desplazar mas rapido los enemigos en funcion del tiempo
-                if self.puntaje<5000:
+                if self.puntaje<600:
                     self.enemigo.desplazarIzquierda2(tiempoEnemigo)
                     tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
 
-                if self.puntaje>5000 and self.puntaje<10000:
+                if self.puntaje>600 and self.puntaje<2500:
+                    self.enemigo.desplazarIzquierda3(tiempoEnemigo)
+                    tiempoEnemigo=self.enemigo.desplazarIzquierda3(tiempoEnemigo)
+                    self.enemigo2.desplazarIzquierda3(tiempoEnemigo2)
+                    tiempoEnemigo2=self.enemigo2.desplazarIzquierda3(tiempoEnemigo2)
+
+                    self.enemigo2.toPantalla(self.pantalla.display)
+
+                if self.puntaje>2500 and self.puntaje<3000:
                     self.enemigo.desplazarIzquierda2(tiempoEnemigo)
                     tiempoEnemigo=self.enemigo.desplazarIzquierda2(tiempoEnemigo)
 
+                    self.enemigo2.desplazarIzquierda2(tiempoEnemigo2)
+                    tiempoEnemigo2=self.enemigo2.desplazarIzquierda2(tiempoEnemigo2)
+                    self.enemigo2.toPantalla(self.pantalla.display)
+
+                    self.enemigo3.desplazarIzquierda2(tiempoEnemigo3)
+                    tiempoEnemigo3=self.enemigo3.desplazarIzquierda2(tiempoEnemigo3)
+                    self.enemigo3.toPantalla(self.pantalla.display)
+
+
+                if self.puntaje>3000:
+                    self.enemigo.desplazarIzquierda3(tiempoEnemigo)
+                    tiempoEnemigo=self.enemigo.desplazarIzquierda3(tiempoEnemigo)
+
+                    self.enemigo2.desplazarIzquierda2(tiempoEnemigo2)
+                    tiempoEnemigo2=self.enemigo2.desplazarIzquierda2(tiempoEnemigo2)
+                    self.enemigo2.toPantalla(self.pantalla.display)
 
 
                  #Cambia enemigo segun puntaje
@@ -97,6 +136,7 @@ class Juego(object):
 
                 if self.puntaje>=1000 and self.puntaje<1200 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock4.png')
+                    self.enemigo2.setImagen('rock4.png')
                     self.pantalla.imagen='F_TheWall.png'
                     self.pantalla.piso='piso2.png'
                     self.pantalla.setImagen()
@@ -104,10 +144,13 @@ class Juego(object):
 
                 if self.puntaje>=1500 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock5.png')
+                    self.enemigo2.setImagen('rock.png')
 
 
                 if self.puntaje>=2000 and self.puntaje<2200 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock2.png')
+                    self.enemigo2.setImagen('rock.png')
+
                     self.pantalla.imagen='noche.png'
                     self.pantalla.setImagen()
 
@@ -116,6 +159,8 @@ class Juego(object):
 
                 if self.puntaje>=3000 and self.puntaje<3200 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock4.png')
+                    self.enemigo2.setImagen('rock.png')
+
                     self.pantalla.imagen='f_Martillo.jpg'
                     self.pantalla.setImagen()
 
