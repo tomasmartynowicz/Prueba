@@ -30,14 +30,12 @@ class Puntaje(object):
             display.blit(text,[280, 100+x])
             x=x+50
 
-#testear
     def burbuja(self, arrayLista):
             lenD = len(arrayLista)
             for i in range(-1,lenD-1):
                 for j in xrange(lenD-1,i+1,-1): #incremento -1 para  hacer j--
                          if(arrayLista[j].puntaje>arrayLista[j-1].puntaje):
                                     self.intercambiar(arrayLista,j,j-1)
-                #j=j-1
             return arrayLista
 
 
