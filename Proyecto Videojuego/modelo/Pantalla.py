@@ -78,7 +78,7 @@ class Pantalla(object):
             self.y=420
 
     def cargarPantalla(self,jugador,enemigo,puntaje,pantalla):
-        fuente = pygame.font.Font(None, 25)
+        fuente = pygame.font.Font('Snickles.ttf',50)
         texto = fuente.render("Jum the rock!! Score: "+str(puntaje), True, (255, 255, 255))
         pantalla.toPantalla()
         jugador.toPantalla(self.display)
@@ -110,30 +110,25 @@ class Pantalla(object):
                          if keys[pygame.K_ESCAPE]:
                                    carcater=True
                                    escribio=True
+                                   reloj1.tick(30)
                          else:
                                    caracter=False
 
 
 
-                         if keys[pygame.K_NUMLOCK]!=True:
 
-                             if pygame.key.get_focused() and escribio!=True and caracter!=True:
-
+                         if pygame.key.get_focused() and escribio!=True and caracter!=True:
                                  for i in xrange(0,len(keys)):
-
                                    name=pygame.key.name(i)
-
                                    if keys[i]==1 and caracter!=True and self.esLetra(keys):
                                               caracter=True
                                               caraceterValido=name
                                               inicioCadena=inicioCadena+1
                                  #keys = pygame.key.get_pressed()
-                         else:
-                               text=f1.render("Desconecta  Bloq Num del teclado Numerico",True,(250,250,250))
-                               self.display.blit(text,(0,50))
 
 
                  keys = pygame.key.get_pressed()
+
 
                  if keys[pygame.K_SPACE]:
                     cadena=cadena[:inicioCadena-1]
@@ -149,7 +144,7 @@ class Pantalla(object):
                    # pos_x=pos_x+50
 
                  pygame.event.post(event)
-                 reloj1.tick(30)
+                 reloj1.tick(9)
                  pygame.display.update()
 
 
@@ -159,8 +154,8 @@ class Pantalla(object):
 
 
     def mostrarCadena(self, cadena):
-        f2 = pygame.font.Font(None,80)
-        text=f2.render("Ingrese Su Nombre:"+cadena,True,(255,255,255))
+        f2 = pygame.font.Font('HEADOH__.ttf',80)
+        text=f2.render("Escriba Su Nombre: "+cadena,True,(255,255,255))
         self.display.blit(text,(0,100))
         pygame.display.update()
 
@@ -172,8 +167,8 @@ class Pantalla(object):
         return respuesta
 
     def mensajeIngrese(self):
-        fuente = pygame.font.Font(None, 50)
-        texto = fuente.render("[Presione tecla (Esc.) para finalizar, (Espacio) para borrar]", True, (255, 255, 255))
+        fuente = pygame.font.Font('Fontin-Italic.ttf',30)
+        texto = fuente.render("[Presione prolongadamente la tecla (Esc.) para finalizar, (Espacio) para borrar]", True, (255, 255, 255))
         self.display.blit(texto,[0, 0])#imprime
 
 

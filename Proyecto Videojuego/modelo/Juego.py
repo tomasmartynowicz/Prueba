@@ -67,6 +67,9 @@ class Juego(object):
         if self.jugador.y<300 and self.jugador.x==self.enemigo2.x:
             respuesta=True
 
+        if self.jugador.y<300 and self.jugador.x==self.enemigo3.x:
+            respuesta=True
+
         return respuesta
 
     def gameOver(self):
@@ -102,6 +105,7 @@ class Juego(object):
                 if self.puntaje>600 and self.puntaje<2500:
                     self.enemigo.desplazarIzquierda3(tiempoEnemigo)
                     tiempoEnemigo=self.enemigo.desplazarIzquierda3(tiempoEnemigo)
+
                     self.enemigo2.desplazarIzquierda3(tiempoEnemigo2)
                     tiempoEnemigo2=self.enemigo2.desplazarIzquierda3(tiempoEnemigo2)
 
@@ -120,13 +124,26 @@ class Juego(object):
                     self.enemigo3.toPantalla(self.pantalla.display)
 
 
-                if self.puntaje>3000:
+                if self.puntaje>3000 and self.puntaje<5000:
                     self.enemigo.desplazarIzquierda3(tiempoEnemigo)
                     tiempoEnemigo=self.enemigo.desplazarIzquierda3(tiempoEnemigo)
 
                     self.enemigo2.desplazarIzquierda2(tiempoEnemigo2)
                     tiempoEnemigo2=self.enemigo2.desplazarIzquierda2(tiempoEnemigo2)
                     self.enemigo2.toPantalla(self.pantalla.display)
+
+                if self.puntaje>5000:
+                    self.enemigo.desplazarIzquierda3(tiempoEnemigo)
+                    tiempoEnemigo=self.enemigo.desplazarIzquierda3(tiempoEnemigo)
+
+                    self.enemigo2.desplazarIzquierda3(tiempoEnemigo2)
+                    tiempoEnemigo2=self.enemigo2.desplazarIzquierda3(tiempoEnemigo2)
+                    self.enemigo2.toPantalla(self.pantalla.display)
+
+                    self.enemigo3.desplazarIzquierda3(tiempoEnemigo3)
+                    tiempoEnemigo3=self.enemigo3.desplazarIzquierda3(tiempoEnemigo3)
+                    self.enemigo3.toPantalla(self.pantalla.display)
+
 
 
                  #Cambia enemigo segun puntaje
@@ -182,8 +199,14 @@ class Juego(object):
                     self.pantalla.imagen='pinkfloyd2.png'
                     self.pantalla.setImagen()
 
-                if self.puntaje>=5500 and tiempoEnemigo==1:
+                if self.puntaje>=6000 and tiempoEnemigo==1:
                     self.enemigo.setImagen('rock.png')
+                    self.pantalla.imagen='f_Martillo.jpg'
+                    self.pantalla.setImagen()
+
+                if self.puntaje==8000:
+                    self.sonido.stopSonido()
+                    self.sonido.playSonido(1)
 
 
 
@@ -207,15 +230,25 @@ class Juego(object):
                 reloj1.tick(30)
                 pygame.display.update()
 
+
+        exploto=True
         while escribio!=True:
-
             for event in pygame.event.get():
+                if exploto:
+                    reloj1 = pygame.time.Clock()
+                    self.sonido.playSonido(2)
+                    reloj1.tick(5)
+                    exploto=False
 
+                self.sonido.stopSonido()
                 self.pantalla.toPantalla()
+                self.jugador.toPantalla(self.pantalla.display)
+                self.enemigo.toPantalla(self.pantalla.display)
                 self.pantalla.mensajeIngrese()
                 self.pantalla.mostrarCadena(self.jugador.alias)
 
                 keys = pygame.key.get_pressed()
+
 
                 if keys[pygame.K_ESCAPE]:
                     escribio=True
@@ -223,6 +256,7 @@ class Juego(object):
                     self.jugador.alias=self.pantalla.setEscribir(keys,event,self.jugador.alias)
 
             pygame.event.post(event)
+
         self.pantalla.imagen='fondo6.jpg'
 
 

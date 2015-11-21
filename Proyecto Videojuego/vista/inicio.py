@@ -54,7 +54,7 @@ while salir != True:
             puntaje.valor=newGame.puntaje
             puntaje.toPantalla(menu.pantalla[2].display)
 
-            menu.lista_puntaje.append(str(newGame.puntaje)+"--"+str(newGame.jugador.alias))
+            menu.lista_puntaje.append(newGame)
 
 
 
