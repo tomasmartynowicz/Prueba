@@ -41,7 +41,7 @@ class Juego(object):
             self.puntaje=self.puntaje+100
         if self.colision()==True:
             perdiste=True
-            self.gameOver()
+            #self.gameOver()
         return perdiste
 
 
@@ -237,8 +237,12 @@ class Juego(object):
         self.sonido.playSonido(2)
         reloj2.tick(6)
         self.sonido.stopSonido()
-
+        self.pantalla.toPantalla()
+        self.pantalla.mensajeIngrese()
         self.jugador.escribirAlias(salir,event,self.pantalla)
         self.pantalla.imagen='image/fondo6.png'
+
+        return event,salir,reloj1
+
 
 

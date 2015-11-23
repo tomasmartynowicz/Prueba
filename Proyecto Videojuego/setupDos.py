@@ -1,17 +1,11 @@
-import sys
-from cx_Freeze import setup, Executable
+import cx_Freeze
 
-# Dependencies are automatically detected, but it might need fine tuning.
-build_exe_options = {"packages": ["os"], "excludes": ["tkinter"]}
+executables=[cx_Freeze.Executable("Jump The Rock.py")]
 
-# GUI applications require a different base on Windows (the default is for a
-# console application).
-base = None
-if sys.platform == "win32":
-    base = "Win32GUI"
+cx_Freeze.setup(
+    name="Jump the Rock",
+     options={"build_exe":{"packages":["pygame"],"include_files":["image","sound","font"]}},
+    description="Jump The Rock - videojuego",
+    executables=executables
 
-setup(  name = "Jump the Rock",
-        version = "0.1",
-        description = "My Videojuego",
-        options = {"build_exe": build_exe_options},
-        executables = [Executable("inicio.py", base=base)])
+    )

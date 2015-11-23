@@ -86,64 +86,28 @@ class Pantalla(object):
         enemigo.toPantalla(self.display)
         self.display.blit(texto,[0, 0])#imprime puntaje
 
-    def setEscribir(self,keys,event,cadena):
-
-        f1 = pygame.font.Font(None, 100)
-        reloj1 = pygame.time.Clock()
-        escribio=False
-        caracter=False
+    def setEscribir(self,keys,cadena):
         caraceterValido=""
         inicioCadena=0
+        caracter=False
+
+                #keys = pygame.key.get_pressed()
+
+        for i in xrange(0,len(keys)):
+               name=pygame.key.name(i)
+               if keys[i]==1 and caracter!=True and self.esLetra(keys):
+                             caracter=True
+                             caraceterValido=name
+                             inicioCadena=inicioCadena+1
 
 
-        while escribio!=True and caracter!=True: #mientras dejo de escribir y de escribir carcateres
-
-                 for event in pygame.event.get():
-
-                         if event.type == pygame.QUIT:
-                                caracter=True
-                                escribio = True
-
-
-                         #keys = pygame.key.get_pressed()
-
-                         if keys[pygame.K_ESCAPE]:
-                                   carcater=True
-                                   escribio=True
-                                   reloj1.tick(30)
-                         else:
-                                   caracter=False
-
-
-
-
-                         if pygame.key.get_focused() and escribio!=True and caracter!=True:
-                                 for i in xrange(0,len(keys)):
-                                   name=pygame.key.name(i)
-                                   if keys[i]==1 and caracter!=True and self.esLetra(keys):
-                                              caracter=True
-                                              caraceterValido=name
-                                              inicioCadena=inicioCadena+1
-                                 #keys = pygame.key.get_pressed()
-
-
-                 keys = pygame.key.get_pressed()
-
-
-                 if keys[pygame.K_BACKSPACE]:
+        if keys[pygame.K_BACKSPACE]:
                     cadena=cadena[:inicioCadena-1]
                     caracter=True
 
-                 if caracter:
+        if caracter:
                     cadena=cadena+caraceterValido
 
-                 pygame.event.post(event)
-                 reloj1.tick(9)
-                 pygame.display.update()
-
-
-
-        inicioCadena=0
         return cadena
 
 

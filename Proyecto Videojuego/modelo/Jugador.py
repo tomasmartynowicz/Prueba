@@ -46,25 +46,35 @@ class Jugador(Personaje):                                           #Esta es la 
 
         def escribirAlias(self,salir,event,pantalla):
                 escribio=False
-                #reloj1 = pygame.time.Clock()
-                while escribio!=True:
+                reloj1 = pygame.time.Clock()
+                keys = pygame.key.get_pressed()
+
+                while keys[pygame.K_ESCAPE]!=True:
+                    pantalla.toPantalla()
+                    pantalla.mensajeIngrese()
+                    pantalla.mostrarCadena(self.alias)
+
+                    if pygame.key.get_focused():
+                               keys = pygame.key.get_pressed()
+
+                               escribio=True
+                               reloj1.tick(8)
+
+
                     for event in pygame.event.get():
 
-                        pantalla.toPantalla()
-                        pantalla.mensajeIngrese()
-                        pantalla.mostrarCadena(self.alias)
 
-                        keys = pygame.key.get_pressed()
+                     if escribio:
+                            self.alias=pantalla.setEscribir(keys,self.alias)
+                            escribio=False
 
 
-                        if keys[pygame.K_ESCAPE]:
-                            escribio=True
-                        if escribio!=True:
-                            self.alias=pantalla.setEscribir(keys,event,self.alias)
 
                     pygame.event.post(event)
-                   # reloj1.tick(30)
-                    pygame.display.update()
+
+                    pygame.display.flip()
+
+                return salir,event,pantalla
 
 
 
