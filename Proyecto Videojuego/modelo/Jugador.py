@@ -1,5 +1,5 @@
 import pygame
-from modelo.Personaje import Personaje
+from Personaje import Personaje
 
 class Jugador(Personaje):                                           #Esta es la SubClase de Clase. Se define igual pero poniendo como parametro la clase base.
         def __init__(self,imagen,x,y,alias):
@@ -43,3 +43,29 @@ class Jugador(Personaje):                                           #Esta es la 
 
         def animar(self):
             print 'en contruccion'
+
+        def escribirAlias(self,salir,event,pantalla):
+                escribio=False
+                #reloj1 = pygame.time.Clock()
+                while escribio!=True:
+                    for event in pygame.event.get():
+
+                        pantalla.toPantalla()
+                        pantalla.mensajeIngrese()
+                        pantalla.mostrarCadena(self.alias)
+
+                        keys = pygame.key.get_pressed()
+
+
+                        if keys[pygame.K_ESCAPE]:
+                            escribio=True
+                        if escribio!=True:
+                            self.alias=pantalla.setEscribir(keys,event,self.alias)
+
+                    pygame.event.post(event)
+                   # reloj1.tick(30)
+                    pygame.display.update()
+
+
+
+

@@ -1,5 +1,7 @@
 import pygame
 
+pygame.init()
+
 class Sonido(object):
     _instance=None
     def __new__ (self):

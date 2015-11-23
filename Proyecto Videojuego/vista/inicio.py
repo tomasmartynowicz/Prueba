@@ -81,3 +81,4 @@ while salir != True:
 
 pygame.quit()
 quit()
+

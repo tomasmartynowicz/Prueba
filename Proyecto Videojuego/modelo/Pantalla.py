@@ -1,6 +1,7 @@
-from modelo.Jugador import Jugador
-from modelo.Enemigo import Enemigo
+from Jugador import Jugador
+from Enemigo import Enemigo
 import pygame
+pygame.init()
 
 class Pantalla(object):
     def __init__(self,nombre,display,imagen,x,y,resolucion,piso = None):
@@ -91,7 +92,6 @@ class Pantalla(object):
         reloj1 = pygame.time.Clock()
         escribio=False
         caracter=False
-        pos_x=0
         caraceterValido=""
         inicioCadena=0
 
@@ -130,18 +130,12 @@ class Pantalla(object):
                  keys = pygame.key.get_pressed()
 
 
-                 if keys[pygame.K_SPACE]:
+                 if keys[pygame.K_BACKSPACE]:
                     cadena=cadena[:inicioCadena-1]
                     caracter=True
 
                  if caracter:
                     cadena=cadena+caraceterValido
-
-
-                # if caracter==True:
-                 #  text=f1.render(cadena,True,(250,250,250))
-                  #  self.display.blit(text,(pos_x+600,100))
-                   # pos_x=pos_x+50
 
                  pygame.event.post(event)
                  reloj1.tick(9)
@@ -168,7 +162,7 @@ class Pantalla(object):
 
     def mensajeIngrese(self):
         fuente = pygame.font.Font('Fontin-Italic.ttf',30)
-        texto = fuente.render("[Presione prolongadamente la tecla (Esc.) para finalizar, (Espacio) para borrar]", True, (255, 255, 255))
+        texto = fuente.render("[Presione prolongadamente la tecla [Esc.] para finalizar]", True, (255, 255, 255))
         self.display.blit(texto,[0, 0])#imprime
 
 

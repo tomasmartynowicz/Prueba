@@ -1,5 +1,7 @@
 import pygame
 
+pygame.init()
+
 class Puntaje(object):
     _instance=None
     def __new__ (self):

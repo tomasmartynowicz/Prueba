@@ -1,4 +1,4 @@
-from modelo.Pantalla import Pantalla
+from Pantalla import Pantalla
 import pygame
 
 
