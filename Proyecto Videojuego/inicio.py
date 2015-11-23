@@ -27,10 +27,10 @@ def main():
 
 
 
-         jugador=Jugador('Perro4.png',0,320,"")#otro jugador
-         enemigo=Enemigo('rock.png',1000,320)
-         enemigo2=Enemigo('rock.png',1000,320)
-         enemigo3=Enemigo('rock4.png',1000,320)
+         jugador=Jugador('image/Perro4.png',0,320,"")#otro jugador
+         enemigo=Enemigo('image/rock.png',1000,320)
+         enemigo2=Enemigo('image/rock.png',1000,320)
+         enemigo3=Enemigo('image/rock4.png',1000,320)
 
          for event in pygame.event.get():
 

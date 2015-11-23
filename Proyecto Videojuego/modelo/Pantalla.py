@@ -79,7 +79,7 @@ class Pantalla(object):
             self.y=420
 
     def cargarPantalla(self,jugador,enemigo,puntaje,pantalla):
-        fuente = pygame.font.Font('Snickles.ttf',50)
+        fuente = pygame.font.Font('font/Snickles.ttf',50)
         texto = fuente.render("Jum the rock!! Score: "+str(puntaje), True, (255, 255, 255))
         pantalla.toPantalla()
         jugador.toPantalla(self.display)
@@ -148,7 +148,7 @@ class Pantalla(object):
 
 
     def mostrarCadena(self, cadena):
-        f2 = pygame.font.Font('HEADOH__.ttf',80)
+        f2 = pygame.font.Font('font/HEADOH__.ttf',80)
         text=f2.render("Escriba Su Nombre: "+cadena,True,(255,255,255))
         self.display.blit(text,(0,100))
         pygame.display.update()
@@ -161,7 +161,7 @@ class Pantalla(object):
         return respuesta
 
     def mensajeIngrese(self):
-        fuente = pygame.font.Font('Fontin-Italic.ttf',30)
+        fuente = pygame.font.Font('font/Fontin-Italic.ttf',30)
         texto = fuente.render("[Presione prolongadamente la tecla [Esc.] para finalizar]", True, (255, 255, 255))
         self.display.blit(texto,[0, 0])#imprime
 

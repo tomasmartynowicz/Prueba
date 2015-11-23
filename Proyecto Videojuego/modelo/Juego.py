@@ -87,9 +87,9 @@ class Juego(object):
         escribio=False
 
         self.sonido.playSonido(0)
-        self.pantalla.imagen='fondo6.png'
+        self.pantalla.imagen='image/fondo6.png'
         self.pantalla.setImagen()
-        self.pantalla.piso='piso.png'
+        self.pantalla.piso='image/piso.png'
         self.pantalla.setPiso()
         #Bucle principal del videojuego
         while salir != True and self.actualizarPantalla()!=True:
@@ -151,59 +151,59 @@ class Juego(object):
                      #Cambia enemigo segun puntaje
 
                     if self.puntaje>=500 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock2.png')
+                        self.enemigo.setImagen('image/rock2.png')
 
                     if self.puntaje>=1000 and self.puntaje<1200 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock4.png')
-                        self.enemigo2.setImagen('rock4.png')
-                        self.pantalla.imagen='F_TheWall.png'
-                        self.pantalla.piso='piso2.png'
+                        self.enemigo.setImagen('image/rock4.png')
+                        self.enemigo2.setImagen('image/rock4.png')
+                        self.pantalla.imagen='image/F_TheWall.png'
+                        self.pantalla.piso='image/piso2.png'
                         self.pantalla.setImagen()
                         self.pantalla.setPiso()
 
                     if self.puntaje>=1500 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock5.png')
-                        self.enemigo2.setImagen('rock.png')
+                        self.enemigo.setImagen('image/rock5.png')
+                        self.enemigo2.setImagen('image/rock.png')
 
 
                     if self.puntaje>=2000 and self.puntaje<2200 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock2.png')
-                        self.enemigo2.setImagen('rock.png')
+                        self.enemigo.setImagen('image/rock2.png')
+                        self.enemigo2.setImagen('image/rock.png')
 
-                        self.pantalla.imagen='noche.png'
+                        self.pantalla.imagen='image/noche.png'
                         self.pantalla.setImagen()
 
                     if self.puntaje>=2500 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock.png')
+                        self.enemigo.setImagen('image/rock.png')
 
                     if self.puntaje>=3000 and self.puntaje<3200 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock4.png')
-                        self.enemigo2.setImagen('rock.png')
+                        self.enemigo.setImagen('image/rock4.png')
+                        self.enemigo2.setImagen('image/rock.png')
 
-                        self.pantalla.imagen='f_Martillo.jpg'
+                        self.pantalla.imagen='image/f_Martillo.jpg'
                         self.pantalla.setImagen()
 
                     if self.puntaje>=3500 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock5.png')
+                        self.enemigo.setImagen('image/rock5.png')
 
 
                     if self.puntaje>=4000 and self.puntaje<4200 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock2.png')
+                        self.enemigo.setImagen('image/rock2.png')
                         self.sonido.stopSonido
-                        self.pantalla.imagen='marte2.jpg'
+                        self.pantalla.imagen='image/marte2.jpg'
                         self.pantalla.setImagen()
 
                     if self.puntaje>=4500 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock5.png')
+                        self.enemigo.setImagen('image/rock5.png')
 
                     if self.puntaje>=5000 and self.puntaje<5200 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock4.png')
-                        self.pantalla.imagen='pinkfloyd2.png'
+                        self.enemigo.setImagen('image/rock4.png')
+                        self.pantalla.imagen='image/pinkfloyd2.png'
                         self.pantalla.setImagen()
 
                     if self.puntaje>=6000 and tiempoEnemigo==1:
-                        self.enemigo.setImagen('rock.png')
-                        self.pantalla.imagen='f_Martillo.jpg'
+                        self.enemigo.setImagen('image/rock.png')
+                        self.pantalla.imagen='image/f_Martillo.jpg'
                         self.pantalla.setImagen()
 
                     if self.puntaje==8000:
@@ -239,6 +239,6 @@ class Juego(object):
         self.sonido.stopSonido()
 
         self.jugador.escribirAlias(salir,event,self.pantalla)
-        self.pantalla.imagen='fondo6.png'
+        self.pantalla.imagen='image/fondo6.png'
 
 

@@ -7,7 +7,7 @@ class Sonido(object):
     def __new__ (self):
       if not self._instance:
          self._instance=super(Sonido,self).__new__(self)
-         self.tema=['dog.mp3','Yet Another Movie.mp3','bomb.wav']
+         self.tema=['sound/dog.mp3','sound/Yet Another Movie.mp3','sound/bomb.wav']
       return self._instance
 
 

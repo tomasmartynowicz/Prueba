@@ -8,7 +8,7 @@ class Puntaje(object):
       if not self._instance:
          self._instance=super(Puntaje,self).__new__(self)
          self.valor=0
-         self.fuente = pygame.font.Font('HEADTH__.ttf', 60)
+         self.fuente = pygame.font.Font('font/HEADTH__.ttf', 60)
       return self._instance
 
     def toPantalla(self,display):
