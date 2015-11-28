@@ -80,7 +80,7 @@ class Pantalla(object):
 
     def cargarPantalla(self,jugador,enemigo,puntaje,pantalla):
         fuente = pygame.font.Font('font/Snickles.ttf',50)
-        texto = fuente.render("Jum the rock!! Score: "+str(puntaje), True, (255, 255, 255))
+        texto = fuente.render("Jump the rock!! Score: "+str(puntaje), True, (255, 255, 255))
         pantalla.toPantalla()
         jugador.toPantalla(self.display)
         enemigo.toPantalla(self.display)
